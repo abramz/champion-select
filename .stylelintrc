@@ -11,8 +11,5 @@
         ]
       }
     ]
-  },
-  "ignoreFiles": [
-    "./src/styles/*.scss",
-  ]
+  }
 }
