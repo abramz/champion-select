@@ -1,0 +1,24 @@
+engines:
+  eslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+        - javascript
+  fixme:
+    enabled: true
+ratings:
+  paths:
+    - "src/**/*"
+    - "**.js"
+exclude_paths:
+  - ".idea"
+  - ".nyc-output"
+  - "build"
+  - "coverage"
+  - "docs"
+  - "licenses"
+  - "node_modules"
+  - "test"
+  - "tools"
