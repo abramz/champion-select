@@ -1,0 +1,6 @@
+{
+  "name": "LolApi",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./LolApi.js"
+}
