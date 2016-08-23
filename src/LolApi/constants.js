@@ -7,3 +7,42 @@ export const riot = {
   itemOpts: 'all,colloq,consumeOnFull,consumed,depth,effect,from,gold,hideFromAll,image,inStore,into,maps,requiredChampion,sanitizedDescription,specialRecipe,stacks,stats,tags'.split(','),
   itemListOpts: 'all,colloq,consumeOnFull,consumed,depth,effect,from,gold,groups,hideFromAll,image,inStore,into,maps,requiredChampion,sanitizedDescription,specialRecipe,stacks,stats,tags,tree'.split(','),
 };
+
+export const api = {
+  champion: {
+    checkId: true,
+    checkLocale: true,
+    getOpts: 'champData',
+    route: 'champion',
+  },
+  champions: {
+    checkLocale: true,
+    getOpts: 'champData',
+    route: 'champion',
+  },
+  item: {
+    checkId: true,
+    checkLocale: true,
+    getOpts: 'itemData',
+    route: 'item',
+  },
+  items: {
+    checkLocale: true,
+    getOpts: 'itemListData',
+    route: 'item',
+  },
+  languageStrings: {
+    checkLocale: true,
+    route: 'language-strings',
+  },
+  languages: {
+    route: 'languages',
+  },
+  maps: {
+    checkLocale: true,
+    route: 'map',
+  },
+  server: {
+    route: 'realm',
+  },
+};

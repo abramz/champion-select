@@ -6,50 +6,79 @@ import {
   getValidItemOpts,
 } from './validators';
 import { makeFetch } from './utils';
+import { api } from './constants';
+
+function doAllTheWork(type, args) {
+  let query = '';
+  let route = type.route;
+  const id = args && args.id ? args.id : null;
+  const options = args && args.options ? args.options : null;
+  const locale = args && args.locale ? args.locale : null;
+
+  if (!type) {
+    throw Error('A type must be provided.');
+  }
+
+  if (type.checkId) {
+    checkId(id);
+  }
+
+  if (type.checkLocale) {
+    checkLocale(locale);
+  }
+
+  if (type.getOpts) {
+    let optString;
+    if (type.getOpts === 'champData') {
+      optString = getValidChampOpts(options);
+    } else if (type.getOpts === 'itemData') {
+      optString = getValidItemOpts(options);
+    } else if (type.getOpts === 'itemListData') {
+      optString = getValidItemListOpts(options);
+    } else {
+      throw new Error(`Unknown options parameter, ${type.getOpts}.`);
+    }
+    query = `${type.getOpts}=${optString}`;
+  }
+
+  if (id) {
+    route = `${route}/${id}`;
+  }
+
+  return makeFetch(route, locale, query);
+}
 
 class LolApi {
-  getChampion({ id, options, locale }) {
-    checkId(id);
-    checkLocale(locale);
-    const optString = getValidChampOpts(options);
-    return makeFetch(`champion/${id}`, locale, `champData=${optString}`);
+  getChampion(args) {
+    return doAllTheWork(api.champion, args);
   }
 
-  getChampions({ options, locale }) {
-    checkLocale(locale);
-    const optString = getValidChampOpts(options);
-    return makeFetch('champion', locale, `champListData=${optString}`);
+  getChampions(args) {
+    return doAllTheWork(api.champions, args);
   }
 
-  getItem({ id, options, locale }) {
-    checkId(id);
-    checkLocale(locale);
-    const optString = getValidItemOpts(options);
-    return makeFetch(`item/${id}`, locale, `itemData=${optString}`);
+  getItem(args) {
+    return doAllTheWork(api.item, args);
   }
 
-  getItems({ options, locale }) {
-    checkLocale(locale);
-    const optString = getValidItemListOpts(options);
-    return makeFetch('item', locale, `itemListData=${optString}`);
+  getItems(args) {
+    return doAllTheWork(api.items, args);
   }
 
-  getLanguageStrings({ locale }) {
-    checkLocale(locale);
-    return makeFetch('language-strings', locale);
+  getLanguageStrings(args) {
+    return doAllTheWork(api.languageStrings, args);
   }
 
-  getLanguages() {
-    return makeFetch('languages');
+  getLanguages(args) {
+    return doAllTheWork(api.languages, args);
   }
 
-  getMaps({ locale }) {
-    checkLocale(locale);
-    return makeFetch('map', locale);
+  getMaps(args) {
+    return doAllTheWork(api.maps, args);
   }
 
-  getServer() {
-    return makeFetch('realm');
+  getServer(args) {
+    return doAllTheWork(api.server, args);
   }
 }
 
