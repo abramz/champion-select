@@ -1,8 +1,5 @@
 import 'babel-polyfill';
 
-/* configure the environment */
-require('dotenv').load();
-
 import chai, { should } from 'chai';
 import sinonChai from 'sinon-chai';
 import 'sinon-as-promised';

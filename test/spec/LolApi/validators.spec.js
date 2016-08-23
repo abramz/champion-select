@@ -5,8 +5,8 @@ import {
   checkId,
   checkLocale,
   __RewireAPI__ as ValidatorsRewireAPI,
-} from '../../src/LolApi/validators';
-import { riot } from '../../src/LolApi/constants';
+} from '../../../src/LolApi/validators';
+import { riot } from '../../../src/LolApi/constants';
 
 describe('LolApi/validators', () => {
   describe('getValidChampOpts', () => {

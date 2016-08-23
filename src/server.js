@@ -16,7 +16,9 @@ import routes from './routes';
 import assets from './assets'; // eslint-disable-line import/no-unresolved
 import { port } from './config';
 
-require('dotenv').load();
+if (process.env.NODE_ENV === 'development') {
+  require('dotenv').load(); // eslint-disable-line global-require
+}
 
 const app = express();
 

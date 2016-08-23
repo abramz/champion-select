@@ -1,4 +1,4 @@
-import LolApi from '../../src/LolApi';
+import LolApi from '../../../src/LolApi';
 import {
   checkId,
   checkLocale,

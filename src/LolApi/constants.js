@@ -1,5 +1,3 @@
-require('dotenv').load();
-
 export const riot = {
   apiKey: process.env.RIOT_API_KEY || 'X',
   baseUrl: 'https://global.api.pvp.net/api/lol/static-data',

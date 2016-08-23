@@ -23,9 +23,9 @@
   },
   "scripts": {
     "eslint": "eslint src tools test",
-    "stylelint": "stylelint \"src/**/*.css\"",
+    "stylelint": "stylelint \"src/**/*.scss\" --syntax scss",
     "lint": "npm run eslint && npm run stylelint",
-    "test": "cross-env NODE_ENV=test mocha test --require test/setup.js --compilers js:babel-register --recursive --reporter spec",
+    "test": "cross-env NODE_ENV=test mocha test/spec --require test/setup.js --compilers js:babel-register --recursive --reporter spec",
     "test:watch": "npm run test -- --reporter min --watch",
     "test:cover": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text npm test",
     "clean": "babel-node tools/run clean",

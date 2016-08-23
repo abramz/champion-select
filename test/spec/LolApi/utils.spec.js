@@ -3,10 +3,11 @@ import {
   stripApiKey,
   makeFetch,
   __RewireAPI__ as UtilsRewireAPI,
-} from '../../src/LolApi/utils';
+} from '../../../src/LolApi/utils';
+import { riot } from '../../../src/LolApi/constants';
 import utilsMocks from '../support/LolApi/utils';
 
-const apiKey = process.env.RIOT_API_KEY;
+const apiKey = riot.apiKey;
 
 describe('LolApi/utils', () => {
   describe('stripApiKey', () => {

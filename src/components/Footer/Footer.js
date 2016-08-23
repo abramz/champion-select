@@ -22,7 +22,7 @@ function Footer() {
             <span className="spacer">·</span>
             <Link className="link" to="/about">About</Link>
             <span className="spacer">·</span>
-            <Link className="link" to="https://github.com/abramz/champion-select">GitHub</Link>
+            <a className="link" href="https://github.com/abramz/champion-select">GitHub</a>
           </Col>
           <Col xs={4} sm={5} md={6}>
             <span className="text-left">
