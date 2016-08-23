@@ -13,7 +13,6 @@ addons:
         - g++-4.8
 before_script:
  - npm install -g codeclimate-test-reporter
- - npm install
 script:
   - npm run lint
   - npm run test:cover
