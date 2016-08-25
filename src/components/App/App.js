@@ -3,6 +3,7 @@ import emptyFunction from 'fbjs/lib/emptyFunction';
 import s from './App.scss';
 
 // components
+import { Grid } from 'react-bootstrap';
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -49,7 +50,7 @@ class App extends Component {
           <Header />
         </header>
         <main role="main">
-          {this.props.children}
+          <Grid>{this.props.children}</Grid>
         </main>
         <footer>
           <Footer />
