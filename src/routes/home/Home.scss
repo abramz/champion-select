@@ -1,0 +1,27 @@
+@import '../../styles/variables.scss';
+
+.champion-list {
+  .champion {
+    display: inline-block;
+    margin: 0;
+    padding: 4px;
+  }
+
+  .champion-image-wrapper{
+
+  }
+
+  .champion-image {
+    display: inline;
+    width: 77px;
+    height: 77px;
+  }
+
+  .champion-text,
+  .champion-text:hover,
+  .champion-text:active,
+  .champion-text:visited {
+    text-decoration: none;
+    color: $text-color;
+  }
+}
