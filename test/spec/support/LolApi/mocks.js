@@ -1,4 +1,5 @@
 import sinon from 'sinon';
+import serverSuccess from './serverSuccess';
 
 export const getValidChampOpts = sinon.stub()
   .withArgs(['success'])
@@ -33,17 +34,11 @@ checkLocale
   .withArgs('success')
   .returns(true);
 
-export async function makeFetch(route, locale, query) {
-  if (query && query[0] === 'fail') {
-    throw new Error('fetch fail');
-  }
+export const makeFetchSuccess = sinon.stub()
+  .resolves('fetch success');
+makeFetchSuccess
+  .withArgs('realm')
+  .resolves(serverSuccess);
 
-  const pretendAsync = new Promise((resolve) => {
-    resolve('fetch success');
-  });
-  return await pretendAsync;
-}
-
-export async function makeFetchFail() {
-  throw new Error('fetch fail');
-}
+export const makeFetchFail = sinon.stub()
+  .rejects('fetch fail');

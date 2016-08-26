@@ -19,7 +19,7 @@ const ChampionType = new ObjectType({
     allytips: { type: new ListType(StringType) },
     blurb: { type: new NonNull(StringType) },
     enemytips: { type: new ListType(StringType) },
-    id: { type: new ListType(IntType) },
+    id: { type: new NonNull(IntType) },
     image: { type: ImageType },
     info: { type: InfoType },
     key: { type: new NonNull(StringType) },

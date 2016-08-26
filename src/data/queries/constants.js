@@ -6,4 +6,4 @@ import {
 
 export const idType = { type: new NonNull(StringType) };
 export const localeType = { type: new NonNull(StringType) };
-export const optsType = { type: new ListType(StringType) };
+export const optionsType = { type: new ListType(StringType) };

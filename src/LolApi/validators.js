@@ -49,3 +49,13 @@ export function checkLocale(locale) {
 
   return true;
 }
+
+export function checkVersion(version) {
+  if (!version) {
+    throw new Error('Error: No version was provided.');
+  } else if (typeof version !== 'string' || !validator.matches(version, /^\d+\.\d+\.\d+$/)) {
+    throw new Error(`Error: version is invalid, "${version}. Expected a string that matches the pattern "/^\d+\.\d+\.\d+$/"`);
+  }
+
+  return true;
+}
