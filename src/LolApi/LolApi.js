@@ -94,7 +94,7 @@ class LolApi {
       route = `${route}/${id}`;
     }
 
-    return makeFetch(route, locale, version, query);
+    return await makeFetch(route, locale, version, query);
   }
 }
 
