@@ -1,7 +1,7 @@
 import championSearch from '../../../src/reducers/championSearch';
 import { SET_CHAMPION_SEARCH } from '../../../src/constants/ActionTypes';
 
-describe('championSearch', () => {
+describe('reduceres/#championSearch()', () => {
   const initialState = '';
 
   it('should provide an initial state', () => {

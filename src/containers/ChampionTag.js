@@ -1,20 +1,28 @@
 import { connect } from 'react-redux';
 import {
-  addChampionFilter,
-  removeChampionFilter,
+  addChampionTag,
+  removeChampionTag,
 } from '../actions';
 import { Checkbox } from 'react-bootstrap';
 
 const mapStateToProps = ({ championFilters }, { filter }) => ({
+  /**
+   * the checkbox is `checked` when the filter is active
+   */
   checked: championFilters.indexOf(filter) > -1,
 });
 
 const mapDispatchToProps = (dispatch, { filter }) => ({
+  /**
+   * if the checkbox is `checked`, then we dispatch the addChampionTag action with the filter
+   * otherwise we dispatch the removeChampionTag action with the filter
+   * @param event
+   */
   onChange(event) {
     if (event.target.checked) {
-      dispatch(addChampionFilter(filter));
+      dispatch(addChampionTag(filter));
     } else {
-      dispatch(removeChampionFilter(filter));
+      dispatch(removeChampionTag(filter));
     }
   },
 });

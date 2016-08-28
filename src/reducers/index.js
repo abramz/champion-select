@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import championSearch from './championSearch';
-import championFilters from './championFilters';
+import championTags from './championTags';
 
 const reducers = combineReducers({
   championSearch,
-  championFilters,
+  championTags,
 });
 
 export default reducers;

@@ -1,12 +1,12 @@
 import {
   setChampionSearch,
-  addChampionFilter,
-  removeChampionFilter,
+  addChampionTag,
+  removeChampionTag,
 } from '../../../src/actions';
 import {
   SET_CHAMPION_SEARCH,
-  ADD_CHAMPION_FILTER,
-  REMOVE_CHAMPION_FILTER,
+  ADD_CHAMPION_TAG,
+  REMOVE_CHAMPION_TAG,
 } from '../../../src/constants/ActionTypes';
 
 describe('Actions', () => {
@@ -19,19 +19,19 @@ describe('Actions', () => {
     });
   });
 
-  describe('#addChampionFilter()', () => {
-    it('should return the addChampionFilter struct', () => {
-      addChampionFilter('foo').should.deep.equal({
-        type: ADD_CHAMPION_FILTER,
+  describe('#addChampionTag()', () => {
+    it('should return the addChampionTag struct', () => {
+      addChampionTag('foo').should.deep.equal({
+        type: ADD_CHAMPION_TAG,
         tag: 'foo',
       });
     });
   });
 
-  describe('#removeChampionFilter()', () => {
-    it('should return the removeChampionFilter struct', () => {
-      removeChampionFilter('foo').should.deep.equal({
-        type: REMOVE_CHAMPION_FILTER,
+  describe('#removeChampionTag()', () => {
+    it('should return the removeChampionTag struct', () => {
+      removeChampionTag('foo').should.deep.equal({
+        type: REMOVE_CHAMPION_TAG,
         tag: 'foo',
       });
     });

@@ -10,7 +10,7 @@ import {
   FormGroup,
 } from 'react-bootstrap';
 import VisibleChampionList from '../../containers/VisibleChampionList';
-import ChampionFilter from '../../containers/ChampionFilter';
+import ChampionFilter from '../../containers/ChampionTag';
 import ChampionSearch from '../../containers/ChampionSearch';
 
 const title = 'Champion Select';

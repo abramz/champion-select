@@ -11,8 +11,11 @@ const mapStateToProps = ({ championSearch }, { placeholder, type }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  /**
+   * dispatch the setChampionSearch action with the input value
+   * @param event
+   */
   onChange(event) {
-    console.log(event.target.value);
     dispatch(setChampionSearch(event.target.value));
   },
 });
