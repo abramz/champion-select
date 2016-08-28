@@ -5,11 +5,11 @@ import {
 } from '../actions';
 import { Checkbox } from 'react-bootstrap';
 
-const mapStateToProps = ({ championFilters }, { filter }) => ({
+const mapStateToProps = ({ championTags }, { filter }) => ({
   /**
    * the checkbox is `checked` when the filter is active
    */
-  checked: championFilters.indexOf(filter) > -1,
+  checked: championTags.indexOf(filter) > -1,
 });
 
 const mapDispatchToProps = (dispatch, { filter }) => ({
