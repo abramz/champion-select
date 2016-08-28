@@ -3,7 +3,7 @@ import ItemListType from '../types/ItemListType';
 import {
   localeType,
   optionsType,
-} from './constants';
+} from '../types/constants';
 
 /**
  * Items query

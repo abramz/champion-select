@@ -2,7 +2,7 @@ import LolApi from '../../LolApi';
 import MapsType from '../types/MapsType';
 import {
   localeType,
-} from './constants';
+} from '../types/constants';
 
 /**
  * Maps query

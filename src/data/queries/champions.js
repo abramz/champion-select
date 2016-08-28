@@ -3,7 +3,7 @@ import ChampionListType from '../types/ChampionListType';
 import {
   localeType,
   optionsType,
-} from './constants';
+} from '../types/constants';
 
 /**
  * Champion List Query

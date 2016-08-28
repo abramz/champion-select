@@ -4,7 +4,7 @@ import {
   idType,
   localeType,
   optionsType,
-} from './constants';
+} from '../types/constants';
 
 /**
  * Champion Query

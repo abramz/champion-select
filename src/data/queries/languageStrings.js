@@ -1,6 +1,6 @@
 import LolApi from '../../LolApi';
 import LanguageStringsType from '../types/LanguageStringsType';
-import { localeType } from './constants';
+import { localeType } from '../types/constants';
 
 /**
  * Language strings query
