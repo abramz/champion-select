@@ -40,6 +40,9 @@
     "include": [
       "src/**/*.js"
     ],
+    "exclude": [
+      "src/data/types"
+    ],
     "require": [
       "babel-register"
     ],
