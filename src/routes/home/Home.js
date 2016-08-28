@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Home.scss';
-import { images } from '../../config';
 
 // components
 import {
@@ -9,11 +8,10 @@ import {
   Row,
   Form,
   FormGroup,
-  FormControl,
-  Checkbox,
-  Well,
 } from 'react-bootstrap';
-import Link from '../../components/Link';
+import VisibleChampionList from '../../containers/VisibleChampionList';
+import ChampionFilter from '../../containers/ChampionFilter';
+import ChampionSearch from '../../containers/ChampionSearch';
 
 const title = 'Champion Select';
 const filters = ['Assassin', 'Fighter', 'Mage', 'Support', 'Tank', 'Marksman'];
@@ -24,7 +22,7 @@ function Home({ data }, context) {
   const version = data.version;
 
   return (
-    <div>
+    <div className="home">
       <Row>
         <Col xs={12}>
           <h3>Welcome, summoner, select your champion.</h3>
@@ -32,45 +30,26 @@ function Home({ data }, context) {
       </Row>
       <br />
       <Row>
-        <Col md={10} mdOffset={1}>
-          <Well bsSize="large">
-            <Form horizontal>
-              <FormGroup controlId="champion-search" bsSize="lg">
-                <Col md={8} mdOffset={2}>
-                  <FormControl type="text" placeholder="Teemo..." />
-                </Col>
-              </FormGroup>
-              <FormGroup controlId="champion-role-filter" bsSize="lg">
-                {
-                  filters.map((filter, index) => (
-                    <Col key={index} sm={2}>
-                      <Checkbox>{filter}</Checkbox>
-                    </Col>
-                  ))
-                }
-              </FormGroup>
-            </Form>
-          </Well>
+        <Col xs={12}>
+          <Form horizontal>
+            <FormGroup controlId="champion-search" bsSize="lg">
+              <Col md={8} mdOffset={2}>
+                <ChampionSearch type="text" placeholder="Teemo..." />
+              </Col>
+            </FormGroup>
+            <FormGroup bsClass="champion-role-filter" controlId="champion-role-filter" bsSize="lg">
+              {
+                filters.map((filter, index) => (
+                  <ChampionFilter key={index} filter={filter}>{filter}</ChampionFilter>
+                ))
+              }
+            </FormGroup>
+          </Form>
         </Col>
       </Row>
       <Row>
         <Col xs={12}>
-          <div className="champion-list">
-            {
-              champions.map((champion, index) => (
-                <div key={index} className="champion">
-                  <span className="champion-image-wrapper">
-                    <Link to={`/champion/${champion.key}`}>
-                      <img className="champion-image" src={`${images.baseUrl}/${version}/img/${champion.image.group}/${champion.image.full}`} alt={champion.name} />
-                    </Link>
-                  </span>
-                  <div className="text-center">
-                    <Link className="champion-text" to={`/champion/${champion.key}`}>{champion.name}</Link>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
+          <VisibleChampionList champions={champions} version={version} />
         </Col>
       </Row>
     </div>
