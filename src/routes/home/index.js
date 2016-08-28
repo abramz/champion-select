@@ -8,7 +8,7 @@ export default {
 
   async action({ query }) { // eslint-disable-line react/prop-types
     const locale = query.locale || 'en_US';
-    const options = `["${['image', 'info', 'tags'].join('", "')}"]`;
+    const options = `["${['image', 'tags'].join('", "')}"]`;
 
     const resp = await fetch('/graphql', {
       method: 'post',
@@ -21,24 +21,11 @@ export default {
           champions(locale: "${locale}", options: ${options}) {
             version
             data {
-              id
               key
               name
-              title
               image {
                 full
                 group
-                sprite
-                h
-                w
-                x
-                y
-              }
-              info {
-                attack
-                defense
-                difficulty
-                magic
               }
               tags
             }
