@@ -15,7 +15,7 @@ function Footer() {
     <div className="footer">
       <Grid>
         <Row>
-          <Col xs={8} sm={7} md={6}>
+          <Col xs={12}>
             <span className="text">© Andrew Shapro</span>
             <span className="spacer">·</span>
             <Link className="link" to="/">Home</Link>
@@ -24,8 +24,13 @@ function Footer() {
             <span className="spacer">·</span>
             <a className="link" href="https://github.com/abramz/champion-select">GitHub</a>
           </Col>
-          <Col xs={4} sm={5} md={6}>
-            <span className="text-left">
+        </Row>
+        <br />
+        <br />
+        <br />
+        <Row>
+          <Col xs={12}>
+            <span className="text">
               Champion Select  isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone
               officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks
               or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.

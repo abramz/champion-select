@@ -2,14 +2,18 @@
 
 .footer {
   font-size: 14px;
+  margin-top: 85px;
   padding-top: 85px;
   padding-bottom: 85px;
   color: $text-color-inverse;
   background-color: $body-bg-inverse;
 
   .text,
+  .spacer,
   .link {
-    padding: 2px 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 10px;
   }
 
   .link,
