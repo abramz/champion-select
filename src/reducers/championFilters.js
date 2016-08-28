@@ -9,14 +9,14 @@ import {
  * @param action - the action representing an added or removed filter
  * @returns {Array}
  */
-const championFilters = (state = [], action) => {
+const championFilters = (state = [], { type, tag }) => {
   const newState = [].concat(state);
-  const locationOfTag = newState.indexOf(action.tag);
+  const locationOfTag = newState.indexOf(tag);
 
-  switch (action.type) {
+  switch (type) {
     case ADD_CHAMPION_FILTER:
       if (locationOfTag === -1) {
-        newState.push(action.tag);
+        newState.push(tag);
       }
 
       return newState;

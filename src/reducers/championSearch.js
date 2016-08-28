@@ -1,9 +1,9 @@
 import { SET_CHAMPION_SEARCH } from '../constants/ActionTypes';
 
-const championSearch = (state = '', action) => {
-  switch (action.type) {
+const championSearch = (state = '', { type, term }) => {
+  switch (type) {
     case SET_CHAMPION_SEARCH:
-      return action.term;
+      return term;
     default:
       return state;
   }
