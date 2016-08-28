@@ -79,7 +79,7 @@ describe('LolApi', () => {
     });
   });
 
-  describe('getChampions', () => {
+  describe('#getChampions()', () => {
     describe('success', () => {
       beforeEach(() => {
         LolApi.__Rewire__('makeFetch', makeFetchSuccess);
@@ -126,7 +126,7 @@ describe('LolApi', () => {
     });
   });
 
-  describe('getItem', () => {
+  describe('#getItem()', () => {
     describe('success', () => {
       beforeEach(() => {
         LolApi.__Rewire__('makeFetch', makeFetchSuccess);
@@ -176,7 +176,7 @@ describe('LolApi', () => {
     });
   });
 
-  describe('getItems', () => {
+  describe('#getItems()', () => {
     describe('success', () => {
       beforeEach(() => {
         LolApi.__Rewire__('makeFetch', makeFetchSuccess);
@@ -223,7 +223,7 @@ describe('LolApi', () => {
     });
   });
 
-  describe('getLanguageStrings', () => {
+  describe('#getLanguageStrings()', () => {
     describe('success', () => {
       beforeEach(() => {
         LolApi.__Rewire__('makeFetch', makeFetchSuccess);
@@ -270,7 +270,7 @@ describe('LolApi', () => {
     });
   });
 
-  describe('getLanguages', () => {
+  describe('#getLanguages()', () => {
     describe('success', () => {
       beforeEach(() => {
         LolApi.__Rewire__('makeFetch', makeFetchSuccess);
@@ -314,7 +314,7 @@ describe('LolApi', () => {
     });
   });
 
-  describe('getMaps', () => {
+  describe('#getMaps()', () => {
     describe('success', () => {
       beforeEach(() => {
         LolApi.__Rewire__('makeFetch', makeFetchSuccess);
@@ -361,7 +361,7 @@ describe('LolApi', () => {
     });
   });
 
-  describe('getServer', () => {
+  describe('#getServer()', () => {
     describe('success', () => {
       beforeEach(() => {
         LolApi.__Rewire__('makeFetch', makeFetchSuccess);
