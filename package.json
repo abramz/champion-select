@@ -23,7 +23,7 @@
   },
   "scripts": {
     "eslint": "eslint src tools test",
-    "stylelint": "stylelint \"src/**/*.scss\" --syntax scss",
+    "stylelint": "stylelint \"src/**/*.css\" --syntax css",
     "lint": "npm run eslint && npm run stylelint",
     "test": "cross-env NODE_ENV=test mocha test/spec --require test/setup.js --compilers js:babel-register --recursive --reporter spec",
     "test:watch": "npm run test -- --reporter min --watch",
