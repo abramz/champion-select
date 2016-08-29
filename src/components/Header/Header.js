@@ -1,30 +1,23 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Header.scss';
+import s from './Header.css';
 
 // components
-import {
-  Navbar,
-  Nav,
-  NavItem,
-} from 'react-bootstrap';
+import View from 'react-flexbox';
 import Link from '../Link';
 
 function Header() {
+  const style = {
+    alignItems: 'center',
+  };
+
   return (
-    <Navbar className={s.root} fixedTop>
-      <Navbar.Header>
-        <Navbar.Brand>
-          <Link to="/">Champion Select</Link>
-        </Navbar.Brand>
-        <Navbar.Toggle />
-      </Navbar.Header>
-      <Navbar.Collapse>
-        <Nav pullRight>
-          <NavItem eventKey={1} href="/about">About</NavItem>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <div className={s.root}>
+      <View className={s.container} row style={style}>
+        <Link className={s.brand} to="/">Champion Select</Link>
+        <Link className={s.link} to="/about">About</Link>
+      </View>
+    </div>
   );
 }
 

@@ -1,12 +1,10 @@
 import { connect } from 'react-redux';
-import {
-  setChampionSearch,
-} from '../actions';
-import { FormControl } from 'react-bootstrap';
+import { setChampionSearch } from '../actions';
 
 const mapStateToProps = ({ championSearch }, { placeholder, type }) => ({
   placeholder,
   type,
+  autoFocus: true,
   value: championSearch,
 });
 
@@ -20,6 +18,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-const ChampionSearch = connect(mapStateToProps, mapDispatchToProps)(FormControl);
+const ChampionSearch = connect(mapStateToProps, mapDispatchToProps)('input');
 
 export default ChampionSearch;

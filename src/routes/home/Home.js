@@ -1,16 +1,13 @@
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Home.scss';
+import s from './Home.css';
 
 // components
-import {
-  Col,
-  Row,
-  Form,
-  FormGroup,
-} from 'react-bootstrap';
+import View from 'react-flexbox';
+
+// containers
 import VisibleChampionList from '../../containers/VisibleChampionList';
-import ChampionFilter from '../../containers/ChampionTag';
+import ChampionTag from '../../containers/ChampionTag';
 import ChampionSearch from '../../containers/ChampionSearch';
 
 const title = 'Champion Select';
@@ -21,41 +18,35 @@ function Home({ data }, context) {
   const champions = data.data;
   const version = data.version;
 
+  const championSearchContainerFlex = {
+    justifyContent: 'center',
+    alignItems: 'center',
+  };
+
+  const championFiltersContainerFlex = {
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+  };
+
   return (
-    <div className="home">
-      <Row>
-        <Col xs={12}>
-          <h3>Welcome, summoner, select your champion.</h3>
-        </Col>
-      </Row>
-      <br />
-      <Row>
-        <Col xs={12}>
-          <Form horizontal>
-            <FormGroup controlId="champion-search" bsSize="lg">
-              <Col md={8} mdOffset={2}>
-                <ChampionSearch type="text" placeholder="Teemo..." />
-              </Col>
-            </FormGroup>
-            <FormGroup bsClass="champion-role-filter" controlId="champion-role-filter" bsSize="lg">
-              {
-                filters.map((filter, index) => (
-                  <ChampionFilter key={index} filter={filter}>
-                    <strong className="filter-title">{filter}</strong>
-                  </ChampionFilter>
-                ))
-              }
-            </FormGroup>
-          </Form>
-        </Col>
-      </Row>
-      <br />
-      <br />
-      <Row>
-        <Col xs={12}>
+    <div className={s.root}>
+      <div className={s.container}>
+        <View column>
+          <h3>Welcome summoner, select your champion.</h3>
+          <View className={s.championSearchContainer} style={championSearchContainerFlex}>
+            <ChampionSearch className={s.championSearch} type="text" placeholder="Teemo..." />
+          </View>
+          <View className={s.championFiltersContainer} style={championFiltersContainerFlex}>
+            {
+              filters.map((filter, index) => (
+                <ChampionTag key={index} filter={filter} className={s.filter} />
+              ))
+            }
+          </View>
           <VisibleChampionList champions={champions} version={version} />
-        </Col>
-      </Row>
+        </View>
+      </div>
     </div>
   );
 }

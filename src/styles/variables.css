@@ -1,0 +1,27 @@
+:root {
+  /* typography */
+  --font-family-base: 'Roboto', sans-serif;
+
+  /* color */
+  --text-light: #ccc;
+  --text-dark: #333;
+  --text-header: #00b3e4;
+
+  /* background */
+  --backround-dark: #343434;
+  --background-light: #fbfbfb;
+  --background-header: #000;
+
+  /* breakpoints */
+  --screen-xs-min: 480px;
+  --screen-sm-min: 768px;
+  --screen-md-min: 992px;
+  --screen-lg-min: 1200px;
+
+  --max-content-size: 1170px;
+
+  @custom-media --xs-viewport (width < 768px); /* Extra small screen / phone */
+  @custom-media --sm-viewport (width >= 768px) and (width < 992px); /* Small screen / tablet */
+  @custom-media --md-viewport (width >= 992px) and (width < 1200px); /* Medium screen / desktop */
+  @custom-media --lg-viewport (width >= 1200px); /* Large screen / wide desktop */
+}

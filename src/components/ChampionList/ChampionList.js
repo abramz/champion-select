@@ -1,40 +1,40 @@
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './ChampionList.scss';
+import s from './ChampionList.css';
 import { images } from '../../config';
 
 // components
+import View from 'react-flexbox';
 import Link from '../../components/Link';
 
-function makeImageStyle(image, version) {
-  // doing this in JS so it can be dynamic
-  return {
-    height: image.h,
-    width: image.w,
-    background: `url('${images.baseUrl}/${version}/img/sprite/${image.sprite}') -${image.x}px -${image.y}px no-repeat`,
-  };
-}
-
 function ChampionList({ champions, version }) {
+  const listFlex = {
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  };
+
   return (
-    <div className="champion-list">
+    <View style={listFlex}>
       {
         champions.map((champion, index) => (
-          <div key={index} className="champion">
-            <span className="champion-image-wrapper">
+          <div key={index} className={s.champion}>
+            <div className={s.championImageWrapper}>
               <Link to={`/champion/${champion.key}`}>
-                <div style={makeImageStyle(champion.image, version)} alt={champion.name}></div>
+                <img
+                  className={s.championImage}
+                  src={`${images.baseUrl}/${version}/img/${champion.image.group}/${champion.image.full}`}
+                  alt={champion.name}
+                />
               </Link>
-            </span>
-            <div className="text-center">
-              <strong>
-                <Link className="champion-text" to={`/champion/${champion.key}`}>{champion.name}</Link>
-              </strong>
+            </div>
+            <div className={s.textCenter}>
+              <Link className={s.championText} to={`/champion/${champion.key}`}>{champion.name}</Link>
             </div>
           </div>
         ))
       }
-    </div>
+    </View>
   );
 }
 
@@ -43,11 +43,8 @@ ChampionList.propTypes = {
     key: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     image: PropTypes.shape({
-      sprite: PropTypes.string.isRequired,
-      h: PropTypes.number.isRequired,
-      w: PropTypes.number.isRequired,
-      x: PropTypes.number.isRequired,
-      y: PropTypes.number.isRequired,
+      group: PropTypes.string.isRequired,
+      full: PropTypes.string.isRequired,
     }),
   })).isRequired,
   version: PropTypes.string.isRequired,

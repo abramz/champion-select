@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import emptyFunction from 'fbjs/lib/emptyFunction';
-import s from './App.scss';
+import s from './App.css';
 
 // components
-import { Grid } from 'react-bootstrap';
+import View from 'react-flexbox';
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -45,17 +45,17 @@ class App extends Component {
 
   render() {
     return !this.props.error ? (
-      <div>
+      <View column>
         <header role="navigation">
           <Header />
         </header>
         <main role="main">
-          <Grid className="main-container">{this.props.children}</Grid>
+          {this.props.children}
         </main>
         <footer>
           <Footer />
         </footer>
-      </div>
+      </View>
     ) : this.props.children;
   }
 

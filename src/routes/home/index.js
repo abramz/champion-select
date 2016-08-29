@@ -24,11 +24,8 @@ export default {
               key
               name
               image {
-                sprite
-                h
-                w
-                x
-                y
+                group
+                full
               }
               tags
             }
