@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { setChampionSearch } from '../actions';
 
-const mapStateToProps = ({ championSearch }, { placeholder, type }) => ({
+const mapStateToProps = ({ championSearch }, { className, placeholder, type }) => ({
+  className,
   placeholder,
   type,
   autoFocus: true,
