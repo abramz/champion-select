@@ -27,7 +27,9 @@ function ChampionList({ champions, version }) {
               </Link>
             </span>
             <div className="text-center">
-              <Link className="champion-text" to={`/champion/${champion.key}`}>{champion.name}</Link>
+              <strong>
+                <Link className="champion-text" to={`/champion/${champion.key}`}>{champion.name}</Link>
+              </strong>
             </div>
           </div>
         ))

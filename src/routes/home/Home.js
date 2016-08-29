@@ -40,7 +40,9 @@ function Home({ data }, context) {
             <FormGroup bsClass="champion-role-filter" controlId="champion-role-filter" bsSize="lg">
               {
                 filters.map((filter, index) => (
-                  <ChampionFilter key={index} filter={filter}>{filter}</ChampionFilter>
+                  <ChampionFilter key={index} filter={filter}>
+                    <strong className="filter-title">{filter}</strong>
+                  </ChampionFilter>
                 ))
               }
             </FormGroup>

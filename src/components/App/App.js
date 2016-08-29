@@ -50,7 +50,7 @@ class App extends Component {
           <Header />
         </header>
         <main role="main">
-          <Grid>{this.props.children}</Grid>
+          <Grid className="main-container">{this.props.children}</Grid>
         </main>
         <footer>
           <Footer />
