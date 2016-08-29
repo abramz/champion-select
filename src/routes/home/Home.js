@@ -47,6 +47,8 @@ function Home({ data }, context) {
           </Form>
         </Col>
       </Row>
+      <br />
+      <br />
       <Row>
         <Col xs={12}>
           <VisibleChampionList champions={champions} version={version} />

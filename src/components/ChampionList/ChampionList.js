@@ -6,6 +6,15 @@ import { images } from '../../config';
 // components
 import Link from '../../components/Link';
 
+function makeImageStyle(image, version) {
+  // doing this in JS so it can be dynamic
+  return {
+    height: image.h,
+    width: image.w,
+    background: `url('${images.baseUrl}/${version}/img/sprite/${image.sprite}') -${image.x}px -${image.y}px no-repeat`,
+  };
+}
+
 function ChampionList({ champions, version }) {
   return (
     <div className="champion-list">
@@ -14,7 +23,7 @@ function ChampionList({ champions, version }) {
           <div key={index} className="champion">
             <span className="champion-image-wrapper">
               <Link to={`/champion/${champion.key}`}>
-                <img className="champion-image" src={`${images.baseUrl}/${version}/img/${champion.image.group}/${champion.image.full}`} alt={champion.name} />
+                <div style={makeImageStyle(champion.image, version)} alt={champion.name}></div>
               </Link>
             </span>
             <div className="text-center">
@@ -32,8 +41,11 @@ ChampionList.propTypes = {
     key: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     image: PropTypes.shape({
-      full: PropTypes.string.isRequired,
-      group: PropTypes.string.isRequired,
+      sprite: PropTypes.string.isRequired,
+      h: PropTypes.number.isRequired,
+      w: PropTypes.number.isRequired,
+      x: PropTypes.number.isRequired,
+      y: PropTypes.number.isRequired,
     }),
   })).isRequired,
   version: PropTypes.string.isRequired,
