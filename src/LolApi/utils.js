@@ -12,18 +12,22 @@ export function stripApiKey(url) {
 }
 
 // I don't want to leak the API key to callers that aren't makeFetch
-function makeUrl(route, locale, query) {
+function makeUrl(route, locale, version, query) {
   const {
     apiKey,
     baseUrl,
-    version,
+    apiVersion,
     region,
   } = riot;
 
-  let url = `${baseUrl}/${region}/${version}/${route}?api_key=${apiKey}`;
+  let url = `${baseUrl}/${region}/${apiVersion}/${route}?api_key=${apiKey}`;
 
   if (locale) {
     url += `&locale=${locale}`;
+  }
+
+  if (version) {
+    url += `&version=${version}`;
   }
 
   if (query) {
@@ -33,11 +37,11 @@ function makeUrl(route, locale, query) {
   return url;
 }
 
-export async function makeFetch(route, locale, query) {
+export async function makeFetch(route, locale, version, query) {
   let response;
   let data;
 
-  const url = makeUrl(route, locale, query);
+  const url = makeUrl(route, locale, version, query);
 
   try {
     response = await fetch(url);

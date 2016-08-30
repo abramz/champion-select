@@ -4,6 +4,7 @@ import {
   getValidItemListOpts,
   checkId,
   checkLocale,
+  checkVersion,
   __RewireAPI__ as ValidatorsRewireAPI,
 } from '../../../src/LolApi/validators';
 import { riot } from '../../../src/LolApi/constants';
@@ -186,6 +187,39 @@ describe('LolApi/validators', () => {
 
       (() => {
         checkLocale('go_f');
+      }).should.throw(Error, error);
+    });
+  });
+
+  describe('checkVersion', () => {
+    const error = /Expected a string that matches the pattern/;
+
+    it('should return true if the version is valid', () => {
+      checkVersion('1.1.1').should.equal(true);
+      checkVersion('16.7.1').should.equal(true);
+    });
+
+    it('should throw an error if the version is not provided', () => {
+      (() => {
+        checkVersion();
+      }).should.throw(Error, 'Error: No version was provided.');
+    });
+
+    it('should throw an error if the version is not a string formatted like: "16.12.10"', () => {
+      (() => {
+        checkVersion('x.4.1');
+      }).should.throw(Error, error);
+
+      (() => {
+        checkVersion('v1.2');
+      }).should.throw(Error, error);
+
+      (() => {
+        checkVersion('4.1');
+      }).should.throw(Error, error);
+
+      (() => {
+        checkVersion('2');
       }).should.throw(Error, error);
     });
   });

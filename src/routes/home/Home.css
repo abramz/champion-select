@@ -1,0 +1,54 @@
+@import '../../styles/variables.css';
+
+.root {
+  margin: 0 16px;
+}
+
+.container {
+  max-width: var(--max-content-size);
+  margin: auto;
+  padding: 12px 24px;
+}
+
+.championSearchContainer {
+  margin-bottom: 16px;
+}
+
+.championSearch {
+  padding: 10px 16px;
+}
+
+.championFiltersContainer {
+  margin-bottom: 24px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.filter {
+  margin-bottom: 6px;
+  padding-right: 4px;
+}
+
+@media (--xs-viewport) {
+  .championSearch {
+    width: 400px;
+  }
+}
+
+@media (--sm-viewport) {
+  .championSearch {
+    width: 688px;
+  }
+}
+
+@media (--md-viewport) {
+  .championSearch {
+    width: 921px;
+  }
+}
+
+@media (--lg-viewport) {
+  .championSearch {
+    width: 1120px;
+  }
+}

@@ -104,16 +104,33 @@ describe('LolApi/utils', () => {
       }
     });
 
-    it('should return the response json on success when route, locale, and query are provided', async (done) => {
+    it('should return the response json on success when route, locale, and version are provided', async (done) => {
       try {
-        fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}&locale=en_US&champData=foo`)
+        fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}&locale=en_US&version=5.12.1`)
           .resolves({
             ok: true,
             json: sinon.stub()
               .resolves(championSuccess),
           });
 
-        const result = await makeFetch('champion', 'en_US', 'champData=foo');
+        const result = await makeFetch('champion', 'en_US', '5.12.1');
+        result.should.deep.equal(championSuccess);
+        done();
+      } catch (error) {
+        done(error); // no errors should be thrown
+      }
+    });
+
+    it('should return the response json on success when route, locale, version, and query are provided', async (done) => {
+      try {
+        fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}&locale=en_US&version=5.12.1&champData=foo`)
+          .resolves({
+            ok: true,
+            json: sinon.stub()
+              .resolves(championSuccess),
+          });
+
+        const result = await makeFetch('champion', 'en_US', '5.12.1', 'champData=foo');
         result.should.deep.equal(championSuccess);
         done();
       } catch (error) {
@@ -130,7 +147,7 @@ describe('LolApi/utils', () => {
               .resolves(championSuccess),
           });
 
-        const result = await makeFetch('champion', null, 'champData=foo');
+        const result = await makeFetch('champion', null, null, 'champData=foo');
         result.should.deep.equal(championSuccess);
         done();
       } catch (error) {

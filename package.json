@@ -23,7 +23,7 @@
   },
   "scripts": {
     "eslint": "eslint src tools test",
-    "stylelint": "stylelint \"src/**/*.scss\" --syntax scss",
+    "stylelint": "stylelint \"src/**/*.css\" --syntax css",
     "lint": "npm run eslint && npm run stylelint",
     "test": "cross-env NODE_ENV=test mocha test/spec --require test/setup.js --compilers js:babel-register --recursive --reporter spec",
     "test:watch": "npm run test -- --reporter min --watch",
@@ -40,6 +40,9 @@
     "include": [
       "src/**/*.js"
     ],
+    "exclude": [
+      "src/data/types"
+    ],
     "require": [
       "babel-register"
     ],
@@ -51,7 +54,6 @@
     "babel-runtime": "6.9.2",
     "bluebird": "3.4.0",
     "body-parser": "1.15.1",
-    "bootstrap-sass": "^3.3.7",
     "classnames": "2.2.5",
     "cookie-parser": "1.4.3",
     "core-js": "2.4.0",
@@ -68,10 +70,14 @@
     "isomorphic-style-loader": "1.0.0",
     "markdown-it": "6.0.5",
     "node-fetch": "1.5.3",
+    "normalize.css": "^4.2.0",
     "pretty-error": "2.0.0",
     "react": "15.1.0",
-    "react-bootstrap": "^0.30.3",
     "react-dom": "15.1.0",
+    "react-flexbox": "^3.1.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
     "source-map-support": "0.4.0",
     "universal-router": "1.2.2",
     "validator": "^5.5.0",

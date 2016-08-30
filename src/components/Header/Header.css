@@ -1,0 +1,33 @@
+@import '../../styles/variables.css';
+
+.root {
+  color: var(--text-header);
+  background-color: var(--background-header);
+  box-shadow: 0 2px 5px 0 rgba(50, 50, 50, 0.75);
+  padding: 0 12px;
+  margin-bottom: 24px;
+}
+
+.container {
+  max-width: var(--max-content-size);
+  margin: auto;
+  min-height: 72px;
+}
+
+.brand,
+.brand:active,
+.brand:hover,
+.brand:visited {
+  text-decoration: none;
+  color: var(--text-header);
+  font-size: 1.7rem;
+}
+
+.link,
+.link:active,
+.link:hover,
+.link:visited {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.9rem;
+}

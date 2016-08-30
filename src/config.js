@@ -9,3 +9,7 @@ export const analytics = {
   },
 
 };
+
+export const images = {
+  baseUrl: '//ddragon.leagueoflegends.com/cdn',
+};
