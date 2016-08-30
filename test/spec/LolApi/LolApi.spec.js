@@ -389,8 +389,7 @@ describe('LolApi', () => {
         let error;
 
         try {
-          const foo = await lolApi.getServer();
-          console.log(foo);
+          await lolApi.getServer();
           return done(new Error('getServer should have failed'));
         } catch (err) {
           error = err;

@@ -25,6 +25,7 @@ function ChampionList({ champions, version }) {
                   className={s.championImage}
                   src={`${images.baseUrl}/${version}/img/${champion.image.group}/${champion.image.full}`}
                   alt={champion.name}
+                  role="presentation"
                 />
               </Link>
             </div>

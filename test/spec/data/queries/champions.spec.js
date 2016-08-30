@@ -64,7 +64,6 @@ describe('queries/champions', () => {
       }
 
       try {
-        console.log(error);
         error.message.should.equal('Unable to retrieve champions.');
         done();
       } catch (err) {
