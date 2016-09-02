@@ -38,14 +38,9 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should return the result of makeFetch', async (done) => {
-        try {
-          const result = await lolApi.getChampion({ id: 'success', locale: 'success', options: ['success'] });
-          expect(result).to.equal('fetch success');
-          done();
-        } catch (error) {
-          done(error);
-        }
+      it('should return the result of makeFetch', async () => {
+        const result = await lolApi.getChampion({ id: 'success', locale: 'success', options: ['success'] });
+        expect(result).to.equal('fetch success');
       });
     });
 
@@ -59,23 +54,18 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should throw an error if makeFetch throws an error', async(done) => {
+      it('should throw an error if makeFetch throws an error', async() => {
         let error;
 
         try {
           await lolApi.getChampion({ id: 'success', locale: 'success' });
-          return done(new Error('getChampion should have failed'));
         } catch (err) {
           error = err;
         }
 
-        try {
-          expect(error.message).to.be.defined;
-          expect(error.message).to.equal('fetch fail');
-          done();
-        } catch (err) {
-          done(err);
-        }
+        expect(error).to.be.defined;
+        expect(error.message).to.be.defined;
+        expect(error.message).to.equal('fetch fail');
       });
     });
   });
@@ -87,14 +77,9 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should return the result of makeFetch', async(done) => {
-        try {
-          const result = await lolApi.getChampions({ locale: 'success', options: ['success'] });
-          expect(result).to.equal('fetch success');
-          done();
-        } catch (error) {
-          done(error);
-        }
+      it('should return the result of makeFetch', async() => {
+        const result = await lolApi.getChampions({ locale: 'success', options: ['success'] });
+        expect(result).to.equal('fetch success');
       });
     });
 
@@ -106,23 +91,18 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should throw an error if makeFetch throws an error', async (done) => {
+      it('should throw an error if makeFetch throws an error', async () => {
         let error;
 
         try {
           await lolApi.getChampions({ locale: 'success' });
-          return done(new Error('getChampions should have failed'));
         } catch (err) {
           error = err;
         }
 
-        try {
-          expect(error.message).to.be.defined;
-          expect(error.message).to.equal('fetch fail');
-          done();
-        } catch (err) {
-          done(err);
-        }
+        expect(error).to.be.defined;
+        expect(error.message).to.be.defined;
+        expect(error.message).to.equal('fetch fail');
       });
     });
   });
@@ -134,14 +114,9 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should return the result of makeFetch', async (done) => {
-        try {
-          const result = await lolApi.getItem({ id: 'success', locale: 'success', options: ['success'] });
-          expect(result).to.equal('fetch success');
-          done();
-        } catch (error) {
-          done(error);
-        }
+      it('should return the result of makeFetch', async () => {
+        const result = await lolApi.getItem({ id: 'success', locale: 'success', options: ['success'] });
+        expect(result).to.equal('fetch success');
       });
     });
 
@@ -155,24 +130,19 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should throw an error if makeFetch throws an error', async (done) => {
+      it('should throw an error if makeFetch throws an error', async () => {
         let error;
         LolApi.__Rewire__('makeFetch', makeFetchFail);
 
         try {
           await lolApi.getItem({ id: 'success', locale: 'success' });
-          return done(new Error('getItem should have failed'));
         } catch (err) {
           error = err;
         }
 
-        try {
-          expect(error.message).to.be.defined;
-          expect(error.message).to.equal('fetch fail');
-          done();
-        } catch (err) {
-          done(err);
-        }
+        expect(error).to.be.defined;
+        expect(error.message).to.be.defined;
+        expect(error.message).to.equal('fetch fail');
       });
     });
   });
@@ -184,14 +154,9 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should return the result of makeFetch', async (done) => {
-        try {
-          const result = await lolApi.getItems({ locale: 'success', options: ['success'] });
-          expect(result).to.equal('fetch success');
-          done();
-        } catch (error) {
-          done(error);
-        }
+      it('should return the result of makeFetch', async () => {
+        const result = await lolApi.getItems({ locale: 'success', options: ['success'] });
+        expect(result).to.equal('fetch success');
       });
     });
 
@@ -203,23 +168,18 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should throw an error if makeFetch throws an error', async (done) => {
+      it('should throw an error if makeFetch throws an error', async () => {
         let error;
 
         try {
           await lolApi.getItems({ locale: 'success' });
-          return done(new Error('getItems should have failed'));
         } catch (err) {
           error = err;
         }
 
-        try {
-          expect(error.message).to.be.defined;
-          expect(error.message).to.equal('fetch fail');
-          done();
-        } catch (err) {
-          done(err);
-        }
+        expect(error).to.be.defined;
+        expect(error.message).to.be.defined;
+        expect(error.message).to.equal('fetch fail');
       });
     });
   });
@@ -231,14 +191,9 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should return the result of makeFetch', async (done) => {
-        try {
-          const result = await lolApi.getLanguageStrings({ locale: 'success' });
-          expect(result).to.equal('fetch success');
-          done();
-        } catch (error) {
-          done(error);
-        }
+      it('should return the result of makeFetch', async () => {
+        const result = await lolApi.getLanguageStrings({ locale: 'success' });
+        expect(result).to.equal('fetch success');
       });
 
       it('should throw an error if the locale is not valid.');
@@ -250,23 +205,18 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should throw an error if makeFetch throws an error', async (done) => {
+      it('should throw an error if makeFetch throws an error', async () => {
         let error;
 
         try {
           await lolApi.getLanguageStrings({ locale: 'success' });
-          return done(new Error('getLanguageStrings should have failed'));
         } catch (err) {
           error = err;
         }
 
-        try {
-          expect(error.message).to.be.defined;
-          expect(error.message).to.equal('fetch fail');
-          done();
-        } catch (err) {
-          done(err);
-        }
+        expect(error).to.be.defined;
+        expect(error.message).to.be.defined;
+        expect(error.message).to.equal('fetch fail');
       });
     });
   });
@@ -278,39 +228,30 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should return the result of makeFetch', async (done) => {
-        try {
-          const result = await lolApi.getLanguages();
-          expect(result).to.equal('fetch success');
-          done();
-        } catch (error) {
-          done(error);
-        }
+      it('should return the result of makeFetch', async () => {
+        const result = await lolApi.getLanguages();
+        expect(result).to.equal('fetch success');
       });
     });
+
     describe('failure', () => {
       beforeEach(() => {
         LolApi.__Rewire__('makeFetch', makeFetchFail);
         lolApi = new LolApi();
       });
 
-      it('should throw an error if makeFetch throws an error', async (done) => {
+      it('should throw an error if makeFetch throws an error', async () => {
         let error;
 
         try {
           await lolApi.getLanguages();
-          return done(new Error('getLanguages should have failed'));
         } catch (err) {
           error = err;
         }
 
-        try {
-          expect(error.message).to.be.defined;
-          expect(error.message).to.equal('fetch fail');
-          done();
-        } catch (err) {
-          done(err);
-        }
+        expect(error).to.be.defined;
+        expect(error.message).to.be.defined;
+        expect(error.message).to.equal('fetch fail');
       });
     });
   });
@@ -322,14 +263,9 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should return the result of makeFetch', async (done) => {
-        try {
-          const result = await lolApi.getMaps({ locale: 'success' });
-          expect(result).to.equal('fetch success');
-          done();
-        } catch (error) {
-          done(error);
-        }
+      it('should return the result of makeFetch', async () => {
+        const result = await lolApi.getMaps({ locale: 'success' });
+        expect(result).to.equal('fetch success');
       });
 
       it('should throw an error if the locale is not valid.');
@@ -341,23 +277,18 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should throw an error if makeFetch throws an error', async (done) => {
+      it('should throw an error if makeFetch throws an error', async () => {
         let error;
 
         try {
           await lolApi.getMaps({ id: 'success', locale: 'success' });
-          return done(new Error('getMaps should have failed'));
         } catch (err) {
           error = err;
         }
 
-        try {
-          expect(error.message).to.be.defined;
-          expect(error.message).to.equal('fetch fail');
-          done();
-        } catch (err) {
-          done(err);
-        }
+        expect(error).to.be.defined;
+        expect(error.message).to.be.defined;
+        expect(error.message).to.equal('fetch fail');
       });
     });
   });
@@ -369,14 +300,9 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should return the result of makeFetch', async (done) => {
-        try {
-          const result = await lolApi.getServer();
-          expect(result).to.deep.equal(serverSuccess);
-          done();
-        } catch (error) {
-          done(error);
-        }
+      it('should return the result of makeFetch', async () => {
+        const result = await lolApi.getServer();
+        expect(result).to.deep.equal(serverSuccess);
       });
     });
 
@@ -386,23 +312,18 @@ describe('LolApi', () => {
         lolApi = new LolApi();
       });
 
-      it('should throw an error if makeFetch throws an error', async (done) => {
+      it('should throw an error if makeFetch throws an error', async () => {
         let error;
 
         try {
           await lolApi.getServer();
-          return done(new Error('getServer should have failed'));
         } catch (err) {
           error = err;
         }
 
-        try {
-          expect(error.message).to.be.defined;
-          expect(error.message).to.equal('fetch fail');
-          done();
-        } catch (err) {
-          done(err);
-        }
+        expect(error).to.be.defined;
+        expect(error.message).to.be.defined;
+        expect(error.message).to.equal('fetch fail');
       });
     });
   });

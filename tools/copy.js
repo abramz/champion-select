@@ -2,6 +2,7 @@
  * React Starter Kit (https://www.reactstarterkit.com/)
  *
  * Copyright © 2014-2016 Kriasoft, LLC. All rights reserved.
+ * Modified by Andrew Shapro 2016
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE.txt file in the root directory of this source tree.
@@ -11,7 +12,7 @@ import path from 'path';
 import gaze from 'gaze';
 import Promise from 'bluebird';
 import fs from './lib/fs';
-import pkg from '../package.json';
+import pkg from '../package';
 /**
  * Copies static files such as robots.txt, favicon.ico to the
  * output (build) folder.
