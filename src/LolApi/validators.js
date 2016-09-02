@@ -40,22 +40,20 @@ export function checkId(id) {
   return true;
 }
 
-export function checkLocale(locale) {
-  if (!locale) {
-    throw new Error('Error: No locale was provided.');
-  } else if (typeof locale !== 'string' || !validator.matches(locale, /^[a-z][a-z]_[A-Z][A-Z]$/)) {
-    throw new Error(`Error: locale is invalid, "${locale}. Expected a string that matches the pattern "/^[a-z][a-z]_[A-Z][A-Z]$/"`);
+function checkString(key, str, pattern) {
+  if (!str) {
+    throw new Error(`Error: No ${key} was provided.`);
+  } else if (typeof str !== 'string' || !validator.matches(str, pattern)) {
+    throw new Error(`Error: ${key} is invalid, "${str}". Expected a string that matches the pattern "${pattern}"`);
   }
 
   return true;
 }
 
-export function checkVersion(version) {
-  if (!version) {
-    throw new Error('Error: No version was provided.');
-  } else if (typeof version !== 'string' || !validator.matches(version, /^\d+\.\d+\.\d+$/)) {
-    throw new Error(`Error: version is invalid, "${version}. Expected a string that matches the pattern "/^\d+\.\d+\.\d+$/"`);
-  }
+export function checkLocale(locale) {
+  return checkString('locale', locale, /^[a-z][a-z]_[A-Z][A-Z]$/);
+}
 
-  return true;
+export function checkVersion(version) {
+  return checkString('version', version, /^\d+\.\d+\.\d+$/);
 }
