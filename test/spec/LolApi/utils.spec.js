@@ -71,92 +71,67 @@ describe('LolApi/utils', () => {
       UtilsRewireAPI.__ResetDependency__('fetch');
     });
 
-    it('should return the response json on success only route is provided', async (done) => {
-      try {
-        fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}`)
-          .resolves({
-            ok: true,
-            json: sinon.stub()
-              .resolves(championSuccess),
-          });
+    it('should return the response json on success only route is provided', async () => {
+      fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}`)
+        .resolves({
+          ok: true,
+          json: sinon.stub()
+            .resolves(championSuccess),
+        });
 
-        const result = await makeFetch('champion');
-        expect(result).to.deep.equal(championSuccess);
-        done();
-      } catch (error) {
-        done(error); // no errors should be thrown
-      }
+      const result = await makeFetch('champion');
+      expect(result).to.deep.equal(championSuccess);
     });
 
-    it('should return the response json on success when route and locale are provided', async (done) => {
-      try {
-        fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}&locale=en_US`)
-          .resolves({
-            ok: true,
-            json: sinon.stub()
-              .resolves(championSuccess),
-          });
+    it('should return the response json on success when route and locale are provided', async () => {
+      fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}&locale=en_US`)
+        .resolves({
+          ok: true,
+          json: sinon.stub()
+            .resolves(championSuccess),
+        });
 
-        const result = await makeFetch('champion', 'en_US');
-        expect(result).to.deep.equal(championSuccess);
-        done();
-      } catch (error) {
-        done(error); // no errors should be thrown
-      }
+      const result = await makeFetch('champion', 'en_US');
+      expect(result).to.deep.equal(championSuccess);
     });
 
-    it('should return the response json on success when route, locale, and version are provided', async (done) => {
-      try {
-        fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}&locale=en_US&version=5.12.1`)
-          .resolves({
-            ok: true,
-            json: sinon.stub()
-              .resolves(championSuccess),
-          });
+    it('should return the response json on success when route, locale, and version are provided', async () => {
+      fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}&locale=en_US&version=5.12.1`)
+        .resolves({
+          ok: true,
+          json: sinon.stub()
+            .resolves(championSuccess),
+        });
 
-        const result = await makeFetch('champion', 'en_US', '5.12.1');
-        expect(result).to.deep.equal(championSuccess);
-        done();
-      } catch (error) {
-        done(error); // no errors should be thrown
-      }
+      const result = await makeFetch('champion', 'en_US', '5.12.1');
+      expect(result).to.deep.equal(championSuccess);
     });
 
-    it('should return the response json on success when route, locale, version, and query are provided', async (done) => {
-      try {
-        fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}&locale=en_US&version=5.12.1&champData=foo`)
-          .resolves({
-            ok: true,
-            json: sinon.stub()
-              .resolves(championSuccess),
-          });
+    it('should return the response json on success when route, locale, version, and query are provided', async () => {
+      fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}&locale=en_US&version=5.12.1&champData=foo`)
+        .resolves({
+          ok: true,
+          json: sinon.stub()
+            .resolves(championSuccess),
+        });
 
-        const result = await makeFetch('champion', 'en_US', '5.12.1', 'champData=foo');
-        expect(result).to.deep.equal(championSuccess);
-        done();
-      } catch (error) {
-        done(error); // no errors should be thrown
-      }
+      const result = await makeFetch('champion', 'en_US', '5.12.1', 'champData=foo');
+      expect(result).to.deep.equal(championSuccess);
     });
 
-    it('should return the response json on success when route and query are provided', async (done) => {
-      try {
-        fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}&champData=foo`)
-          .resolves({
-            ok: true,
-            json: sinon.stub()
-              .resolves(championSuccess),
-          });
+    it('should return the response json on success when route and query are provided', async () => {
+      fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion?api_key=${apiKey}&champData=foo`)
+        .resolves({
+          ok: true,
+          json: sinon.stub()
+            .resolves(championSuccess),
+        });
 
-        const result = await makeFetch('champion', null, null, 'champData=foo');
-        expect(result).to.deep.equal(championSuccess);
-        done();
-      } catch (error) {
-        done(error); // no errors should be thrown
-      }
+      const result = await makeFetch('champion', null, null, 'champData=foo');
+      expect(result).to.deep.equal(championSuccess);
     });
 
-    it('should throw an error, with stripped API key, if the fetch does', async (done) => {
+    it('should throw an error, with stripped API key, if the fetch does', async () => {
       let error;
 
       try {
@@ -164,20 +139,15 @@ describe('LolApi/utils', () => {
           .rejects(new Error('failure :(, api_key=abcd'));
 
         await makeFetch('fail');
-        return done(new Error('makeFetch should have failed.'));
       } catch (err) {
         error = err;
       }
 
-      try {
-        expect(error.message).to.equal('failure :(, api_key=<REDACTED>');
-        done();
-      } catch (err) {
-        done(err);
-      }
+      expect(error).to.be.defined;
+      expect(error.message).to.equal('failure :(, api_key=<REDACTED>');
     });
 
-    it('should throw an error, with stripped API key, if the response does', async (done) => {
+    it('should throw an error, with stripped API key, if the response does', async () => {
       let error;
 
       try {
@@ -189,20 +159,14 @@ describe('LolApi/utils', () => {
           });
 
         await makeFetch('fail');
-        return done(new Error('makeFetch should have failed.'));
       } catch (err) {
         error = err;
       }
-
-      try {
-        expect(error.message).to.equal('failure :(, api_key=<REDACTED>');
-        done();
-      } catch (err) {
-        done(err);
-      }
+      expect(error).to.be.defined;
+      expect(error.message).to.equal('failure :(, api_key=<REDACTED>');
     });
 
-    it('should throw an error, with stripped API key, if the request errors', async (done) => {
+    it('should throw an error, with stripped API key, if the request errors', async () => {
       let error;
       try {
         fetch.withArgs(`https://global.api.pvp.net/api/lol/static-data/na/v1.2/fail?api_key=${apiKey}`)
@@ -213,17 +177,11 @@ describe('LolApi/utils', () => {
           });
 
         await makeFetch('fail');
-        return done(new Error('makeFetch should have failed.'));
       } catch (err) {
         error = err;
       }
-
-      try {
-        expect(error.message).to.equal('Error: request to "https://global.api.pvp.net/api/lol/static-data/na/v1.2/fail?api_key=<REDACTED>" failed with status: "404|Not Found".');
-        done();
-      } catch (err) {
-        done(err);
-      }
+      expect(error).to.be.defined;
+      expect(error.message).to.equal('Error: request to "https://global.api.pvp.net/api/lol/static-data/na/v1.2/fail?api_key=<REDACTED>" failed with status: "404|Not Found".');
     });
   });
 });

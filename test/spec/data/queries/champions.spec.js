@@ -39,19 +39,14 @@ describe('Queries/champions', () => {
       champions.__ResetDependency__('lolApi');
     });
 
-    it('should return the result of getChampionsResult with the map of champions turned into a list', async (done) => {
+    it('should return the result of getChampionsResult with the map of champions turned into a list', async () => {
       getChampionsStub.resolves(getChampionsResult.withMap);
 
-      try {
-        const result = await champions.resolve(null, { locale, options });
-        expect(result).to.deep.equal(getChampionsResult.withArray);
-        done();
-      } catch (error) {
-        done(error);
-      }
+      const result = await champions.resolve(null, { locale, options });
+      expect(result).to.deep.equal(getChampionsResult.withArray);
     });
 
-    it('should throw an error if the request is unsuccessful', async (done) => {
+    it('should throw an error if the request is unsuccessful', async () => {
       let error;
       const errorMsg = 'failure of some sort';
 
@@ -59,17 +54,11 @@ describe('Queries/champions', () => {
 
       try {
         await champions.resolve(null, { locale, options });
-        return done(new Error('champions.resolve() should have failed.'));
       } catch (err) {
         error = err;
       }
-
-      try {
-        expect(error.message).to.equal('Unable to retrieve champions.');
-        done();
-      } catch (err) {
-        done(err);
-      }
+      expect(error).to.be.defined;
+      expect(error.message).to.equal('Unable to retrieve champions.');
     });
   });
 });

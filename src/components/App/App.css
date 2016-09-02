@@ -15,7 +15,6 @@ html {
   font-family: var(--font-family-base);
   color: var(--text-dark);
   background-color: var(--background-light);
-
   font-size: 16px;
 }
 

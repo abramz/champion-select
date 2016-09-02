@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 
-export function Checkbox({ checked, className, filter, onChange }) {
+function Checkbox({ checked, className, filter, onChange }) {
   const id = `checkbox-tag-${filter}`;
 
   return (
