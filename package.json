@@ -28,7 +28,7 @@
     "test": "cross-env NODE_ENV=test mocha test/spec --require test/setup.js --compilers js:babel-register --recursive --reporter spec",
     "test:watch": "npm run test -- --reporter min --watch",
     "test:cover": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text npm test",
-    "test:ci": "snyk:test && test:cover",
+    "test:ci": "npm run snyk:test && npm run test:cover",
     "clean": "babel-node tools/run clean",
     "copy": "babel-node tools/run copy",
     "bundle": "babel-node tools/run bundle",
