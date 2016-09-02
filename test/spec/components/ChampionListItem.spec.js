@@ -34,6 +34,8 @@ describe('ChampionListItem', () => {
   });
 
   it('should display the name of the champion', () => {
-    expect(wrapper.find(Link).last()).to.have.prop('to', '/champion/key str');
+    const nameRef = wrapper.find(Link).last();
+    expect(nameRef).to.have.prop('to', '/champion/key str');
+    expect(nameRef).to.have.prop('children', 'name str');
   });
 });
