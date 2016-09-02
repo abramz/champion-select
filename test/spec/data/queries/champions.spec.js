@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import sinon from 'sinon';
 import champions from '../../../../src/data/queries/champions';
 import ChampionListType from '../../../../src/data/types/ChampionListType';
@@ -7,17 +8,17 @@ import {
 } from '../../../../src/data/types/constants';
 import getChampionsResult from '../../support/getChampionsResult';
 
-describe('queries/champions', () => {
+describe('Queries/champions', () => {
   it('should define a type', () => {
-    champions.type.should.deep.equal(ChampionListType);
+    expect(champions.type).to.deep.equal(ChampionListType);
   });
 
   it('should define arguments', () => {
-    champions.args.should.be.an('object');
-    champions.args.should.have.property('locale');
-    champions.args.should.have.property('options');
-    champions.args.locale.should.be.deep.equal(localeType);
-    champions.args.options.should.be.deep.equal(optionsType);
+    expect(champions.args).to.be.an('object');
+    expect(champions.args).to.have.property('locale');
+    expect(champions.args).to.have.property('options');
+    expect(champions.args.locale).to.deep.equal(localeType);
+    expect(champions.args.options).to.deep.equal(optionsType);
   });
 
   describe('#resolve()', () => {
@@ -43,7 +44,7 @@ describe('queries/champions', () => {
 
       try {
         const result = await champions.resolve(null, { locale, options });
-        result.should.deep.equal(getChampionsResult.withArray);
+        expect(result).to.deep.equal(getChampionsResult.withArray);
         done();
       } catch (error) {
         done(error);
@@ -64,7 +65,7 @@ describe('queries/champions', () => {
       }
 
       try {
-        error.message.should.equal('Unable to retrieve champions.');
+        expect(error.message).to.equal('Unable to retrieve champions.');
         done();
       } catch (err) {
         done(err);

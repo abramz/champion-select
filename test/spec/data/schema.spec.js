@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import schema from '../../../src/data/schema';
 
 describe('GraphQL Schema', () => {
@@ -14,17 +15,17 @@ describe('GraphQL Schema', () => {
   ];
 
   it('should contain all our queries', () => {
-    schema.should.be.an('object');
-    schema.should.have.property('_queryType');
+    expect(schema).to.be.an('object');
+    expect(schema).to.have.property('_queryType');
 
     const { _queryType } = schema;
-    _queryType.should.be.an('object');
-    _queryType.should.have.property('_fields');
+    expect(_queryType).to.be.an('object');
+    expect(_queryType).to.have.property('_fields');
 
     const { _fields } = _queryType;
-    _fields.should.be.an('object');
+    expect(_fields).to.be.an('object');
     requiredQueries.forEach((query) => {
-      _fields.should.have.property(query);
+      expect(_fields).to.have.property(query);
     });
   });
 });
