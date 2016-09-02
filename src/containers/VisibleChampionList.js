@@ -54,7 +54,7 @@ const getVisibleChampions = (champions, search, tags) => (
     })
 );
 
-const mapStateToProps = ({ championSearch, championTags }, { champions, version }) => ({
+export const mapStateToProps = ({ championSearch, championTags }, { champions, version }) => ({
   /**
    * The version of League of Legends we are working with
    */

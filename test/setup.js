@@ -1,12 +1,13 @@
 import 'babel-polyfill';
 
-import chai, { should } from 'chai';
+import chai from 'chai';
 import sinonChai from 'sinon-chai';
+import chaiEnzyme from 'chai-enzyme';
 import 'sinon-as-promised';
 
-/* configure chai to use 'should' syntax and chain off of sinon constructs */
-should();
+/* configure chai to chain off of sinon & enzyme constructs */
 chai.use(sinonChai);
+chai.use(chaiEnzyme());
 
 
 function noop() {

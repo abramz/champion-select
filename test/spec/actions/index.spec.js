@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import {
   setChampionSearch,
   addChampionTag,
@@ -12,7 +13,7 @@ import {
 describe('Actions', () => {
   describe('#setChampionSearch()', () => {
     it('should return the championSearch struct', () => {
-      setChampionSearch('foo').should.deep.equal({
+      expect(setChampionSearch('foo')).to.deep.equal({
         type: SET_CHAMPION_SEARCH,
         term: 'foo',
       });
@@ -21,7 +22,7 @@ describe('Actions', () => {
 
   describe('#addChampionTag()', () => {
     it('should return the addChampionTag struct', () => {
-      addChampionTag('foo').should.deep.equal({
+      expect(addChampionTag('foo')).to.deep.equal({
         type: ADD_CHAMPION_TAG,
         tag: 'foo',
       });
@@ -30,7 +31,7 @@ describe('Actions', () => {
 
   describe('#removeChampionTag()', () => {
     it('should return the removeChampionTag struct', () => {
-      removeChampionTag('foo').should.deep.equal({
+      expect(removeChampionTag('foo')).to.deep.equal({
         type: REMOVE_CHAMPION_TAG,
         tag: 'foo',
       });

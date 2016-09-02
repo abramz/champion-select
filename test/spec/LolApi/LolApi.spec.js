@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import LolApi from '../../../src/LolApi';
 import {
   checkId,
@@ -40,7 +41,7 @@ describe('LolApi', () => {
       it('should return the result of makeFetch', async (done) => {
         try {
           const result = await lolApi.getChampion({ id: 'success', locale: 'success', options: ['success'] });
-          result.should.equal('fetch success');
+          expect(result).to.equal('fetch success');
           done();
         } catch (error) {
           done(error);
@@ -69,8 +70,8 @@ describe('LolApi', () => {
         }
 
         try {
-          error.message.should.be.defined;
-          error.message.should.equal('fetch fail');
+          expect(error.message).to.be.defined;
+          expect(error.message).to.equal('fetch fail');
           done();
         } catch (err) {
           done(err);
@@ -89,7 +90,7 @@ describe('LolApi', () => {
       it('should return the result of makeFetch', async(done) => {
         try {
           const result = await lolApi.getChampions({ locale: 'success', options: ['success'] });
-          result.should.equal('fetch success');
+          expect(result).to.equal('fetch success');
           done();
         } catch (error) {
           done(error);
@@ -116,8 +117,8 @@ describe('LolApi', () => {
         }
 
         try {
-          error.message.should.be.defined;
-          error.message.should.equal('fetch fail');
+          expect(error.message).to.be.defined;
+          expect(error.message).to.equal('fetch fail');
           done();
         } catch (err) {
           done(err);
@@ -136,7 +137,7 @@ describe('LolApi', () => {
       it('should return the result of makeFetch', async (done) => {
         try {
           const result = await lolApi.getItem({ id: 'success', locale: 'success', options: ['success'] });
-          result.should.equal('fetch success');
+          expect(result).to.equal('fetch success');
           done();
         } catch (error) {
           done(error);
@@ -166,8 +167,8 @@ describe('LolApi', () => {
         }
 
         try {
-          error.message.should.be.defined;
-          error.message.should.equal('fetch fail');
+          expect(error.message).to.be.defined;
+          expect(error.message).to.equal('fetch fail');
           done();
         } catch (err) {
           done(err);
@@ -186,7 +187,7 @@ describe('LolApi', () => {
       it('should return the result of makeFetch', async (done) => {
         try {
           const result = await lolApi.getItems({ locale: 'success', options: ['success'] });
-          result.should.equal('fetch success');
+          expect(result).to.equal('fetch success');
           done();
         } catch (error) {
           done(error);
@@ -213,8 +214,8 @@ describe('LolApi', () => {
         }
 
         try {
-          error.message.should.be.defined;
-          error.message.should.equal('fetch fail');
+          expect(error.message).to.be.defined;
+          expect(error.message).to.equal('fetch fail');
           done();
         } catch (err) {
           done(err);
@@ -233,7 +234,7 @@ describe('LolApi', () => {
       it('should return the result of makeFetch', async (done) => {
         try {
           const result = await lolApi.getLanguageStrings({ locale: 'success' });
-          result.should.equal('fetch success');
+          expect(result).to.equal('fetch success');
           done();
         } catch (error) {
           done(error);
@@ -260,8 +261,8 @@ describe('LolApi', () => {
         }
 
         try {
-          error.message.should.be.defined;
-          error.message.should.equal('fetch fail');
+          expect(error.message).to.be.defined;
+          expect(error.message).to.equal('fetch fail');
           done();
         } catch (err) {
           done(err);
@@ -280,7 +281,7 @@ describe('LolApi', () => {
       it('should return the result of makeFetch', async (done) => {
         try {
           const result = await lolApi.getLanguages();
-          result.should.equal('fetch success');
+          expect(result).to.equal('fetch success');
           done();
         } catch (error) {
           done(error);
@@ -304,8 +305,8 @@ describe('LolApi', () => {
         }
 
         try {
-          error.message.should.be.defined;
-          error.message.should.equal('fetch fail');
+          expect(error.message).to.be.defined;
+          expect(error.message).to.equal('fetch fail');
           done();
         } catch (err) {
           done(err);
@@ -324,7 +325,7 @@ describe('LolApi', () => {
       it('should return the result of makeFetch', async (done) => {
         try {
           const result = await lolApi.getMaps({ locale: 'success' });
-          result.should.equal('fetch success');
+          expect(result).to.equal('fetch success');
           done();
         } catch (error) {
           done(error);
@@ -351,8 +352,8 @@ describe('LolApi', () => {
         }
 
         try {
-          error.message.should.be.defined;
-          error.message.should.equal('fetch fail');
+          expect(error.message).to.be.defined;
+          expect(error.message).to.equal('fetch fail');
           done();
         } catch (err) {
           done(err);
@@ -371,7 +372,7 @@ describe('LolApi', () => {
       it('should return the result of makeFetch', async (done) => {
         try {
           const result = await lolApi.getServer();
-          result.should.deep.equal(serverSuccess);
+          expect(result).to.deep.equal(serverSuccess);
           done();
         } catch (error) {
           done(error);
@@ -396,8 +397,8 @@ describe('LolApi', () => {
         }
 
         try {
-          error.message.should.be.defined;
-          error.message.should.equal('fetch fail');
+          expect(error.message).to.be.defined;
+          expect(error.message).to.equal('fetch fail');
           done();
         } catch (err) {
           done(err);

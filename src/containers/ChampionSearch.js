@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { setChampionSearch } from '../actions';
 
-const mapStateToProps = ({ championSearch }, { className, placeholder, type }) => ({
+export const mapStateToProps = ({ championSearch }, { className, placeholder, type }) => ({
   className,
   placeholder,
   type,
@@ -9,7 +9,7 @@ const mapStateToProps = ({ championSearch }, { className, placeholder, type }) =
   value: championSearch,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   /**
    * dispatch the setChampionSearch action with the input value
    * @param event

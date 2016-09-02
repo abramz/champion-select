@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import {
   getValidChampOpts,
   getValidItemOpts,
@@ -23,29 +24,29 @@ describe('LolApi/validators', () => {
 
     it('should return no options if non are provided', () => {
       Object.assign(replacedRiot, riot);
-      getValidChampOpts([]).should.equal('');
+      expect(getValidChampOpts([])).to.equal('');
     });
 
     it('should return no options if non are valid', () => {
       Object.assign(replacedRiot, riot);
-      getValidChampOpts(['foo', 'bar', 'baz']).should.equal('');
+      expect(getValidChampOpts(['foo', 'bar', 'baz'])).to.equal('');
     });
 
     it('should return all options that are valid', () => {
       Object.assign(replacedRiot, riot);
-      getValidChampOpts(['all', 'foo', 'blurb', 'bar', 'baz', 'partype']).should.equal('all,blurb,partype');
+      expect(getValidChampOpts(['all', 'foo', 'blurb', 'bar', 'baz', 'partype'])).to.equal('all,blurb,partype');
     });
 
     it('should throw an error if the options or keys provided are not arrays', () => {
       Object.assign(replacedRiot, riot, { champOpts: null });
 
-      (() => {
+      expect(() => {
         getValidChampOpts();
-      }).should.throw(Error, /options argument/);
+      }).to.throw(Error, /options argument/);
 
-      (() => {
+      expect(() => {
         getValidChampOpts([]);
-      }).should.throw(Error, /validKeys argument/);
+      }).to.throw(Error, /validKeys argument/);
     });
   });
 
@@ -62,29 +63,29 @@ describe('LolApi/validators', () => {
 
     it('should return no options if non are provided', () => {
       Object.assign(replacedRiot, riot);
-      getValidItemOpts([]).should.equal('');
+      expect(getValidItemOpts([])).to.equal('');
     });
 
     it('should return no options if non are valid', () => {
       Object.assign(replacedRiot, riot);
-      getValidItemOpts(['foo', 'bar', 'baz']).should.equal('');
+      expect(getValidItemOpts(['foo', 'bar', 'baz'])).to.equal('');
     });
 
     it('should return all options that are valid', () => {
       Object.assign(replacedRiot, riot);
-      getValidItemOpts(['all', 'foo', 'requiredChampion', 'bar', 'baz', 'stats']).should.equal('all,requiredChampion,stats');
+      expect(getValidItemOpts(['all', 'foo', 'requiredChampion', 'bar', 'baz', 'stats'])).to.equal('all,requiredChampion,stats');
     });
 
     it('should throw an error if the options or keys provided are not arrays', () => {
       Object.assign(replacedRiot, riot, { itemOpts: null });
 
-      (() => {
+      expect(() => {
         getValidItemOpts();
-      }).should.throw(Error, /options argument/);
+      }).to.throw(Error, /options argument/);
 
-      (() => {
+      expect(() => {
         getValidItemOpts([]);
-      }).should.throw(Error, /validKeys argument/);
+      }).to.throw(Error, /validKeys argument/);
     });
   });
 
@@ -101,29 +102,29 @@ describe('LolApi/validators', () => {
 
     it('should return no options if non are provided', () => {
       Object.assign(replacedRiot, riot);
-      getValidItemListOpts([]).should.equal('');
+      expect(getValidItemListOpts([])).to.equal('');
     });
 
     it('should return no options if non are valid', () => {
       Object.assign(replacedRiot, riot);
-      getValidItemListOpts(['foo', 'bar', 'baz']).should.equal('');
+      expect(getValidItemListOpts(['foo', 'bar', 'baz'])).to.equal('');
     });
 
     it('should return all options that are valid', () => {
       Object.assign(replacedRiot, riot);
-      getValidItemListOpts(['all', 'foo', 'requiredChampion', 'bar', 'baz', 'tree']).should.equal('all,requiredChampion,tree');
+      expect(getValidItemListOpts(['all', 'foo', 'requiredChampion', 'bar', 'baz', 'tree'])).to.equal('all,requiredChampion,tree');
     });
 
     it('should throw an error if the options or keys provided are not arrays', () => {
       Object.assign(replacedRiot, riot, { itemListOpts: null });
 
-      (() => {
+      expect(() => {
         getValidItemListOpts();
-      }).should.throw(Error, /options argument/);
+      }).to.throw(Error, /options argument/);
 
-      (() => {
+      expect(() => {
         getValidItemListOpts([]);
-      }).should.throw(Error, /validKeys argument/);
+      }).to.throw(Error, /validKeys argument/);
     });
   });
 
@@ -131,24 +132,24 @@ describe('LolApi/validators', () => {
     const error = /Expected a numeric string./;
 
     it('should return true if the id is valid', () => {
-      checkId('531').should.equal(true);
-      checkId('124435235').should.equal(true);
+      expect(checkId('531')).to.be.true;
+      expect(checkId('124435235')).to.be.true;
     });
 
     it('should throw an error if the id is not provided', () => {
-      (() => {
+      expect(() => {
         checkId();
-      }).should.throw(Error, error);
+      }).to.throw(Error, error);
     });
 
     it('should throw an error if the id is not a number in string form', () => {
-      (() => {
+      expect(() => {
         checkId(13);
-      }).should.throw(Error, error);
+      }).to.throw(Error, error);
 
-      (() => {
+      expect(() => {
         checkId('fail');
-      }).should.throw(Error, error);
+      }).to.throw(Error, error);
     });
   });
 
@@ -156,38 +157,38 @@ describe('LolApi/validators', () => {
     const error = /Expected a string that matches the pattern/;
 
     it('should return true if the locale is valid', () => {
-      checkLocale('en_US').should.equal(true);
-      checkLocale('zh_TW').should.equal(true);
+      expect(checkLocale('en_US')).to.be.true;
+      expect(checkLocale('zh_TW')).to.be.true;
     });
 
     it('should throw an error if the locale is not provided', () => {
-      (() => {
+      expect(() => {
         checkLocale();
-      }).should.throw(Error, 'Error: No locale was provided.');
+      }).to.throw(Error, 'Error: No locale was provided.');
     });
 
     it('should throw an error if the locale is not a string', () => {
-      (() => {
+      expect(() => {
         checkLocale(12345);
-      }).should.throw(Error, error);
+      }).to.throw(Error, error);
     });
 
     it('should throw an error if the locale is not a string formatted like: "en_US"', () => {
-      (() => {
+      expect(() => {
         checkLocale('go_far');
-      }).should.throw(Error, error);
+      }).to.throw(Error, error);
 
-      (() => {
+      expect(() => {
         checkLocale('gof_ar');
-      }).should.throw(Error, error);
+      }).to.throw(Error, error);
 
-      (() => {
+      expect(() => {
         checkLocale('g_of');
-      }).should.throw(Error, error);
+      }).to.throw(Error, error);
 
-      (() => {
+      expect(() => {
         checkLocale('go_f');
-      }).should.throw(Error, error);
+      }).to.throw(Error, error);
     });
   });
 
@@ -195,32 +196,32 @@ describe('LolApi/validators', () => {
     const error = /Expected a string that matches the pattern/;
 
     it('should return true if the version is valid', () => {
-      checkVersion('1.1.1').should.equal(true);
-      checkVersion('16.7.1').should.equal(true);
+      expect(checkVersion('1.1.1')).to.equal(true);
+      expect(checkVersion('16.7.1')).to.equal(true);
     });
 
     it('should throw an error if the version is not provided', () => {
-      (() => {
+      expect(() => {
         checkVersion();
-      }).should.throw(Error, 'Error: No version was provided.');
+      }).to.throw(Error, 'Error: No version was provided.');
     });
 
     it('should throw an error if the version is not a string formatted like: "16.12.10"', () => {
-      (() => {
+      expect(() => {
         checkVersion('x.4.1');
-      }).should.throw(Error, error);
+      }).to.throw(Error, error);
 
-      (() => {
+      expect(() => {
         checkVersion('v1.2');
-      }).should.throw(Error, error);
+      }).to.throw(Error, error);
 
-      (() => {
+      expect(() => {
         checkVersion('4.1');
-      }).should.throw(Error, error);
+      }).to.throw(Error, error);
 
-      (() => {
+      expect(() => {
         checkVersion('2');
-      }).should.throw(Error, error);
+      }).to.throw(Error, error);
     });
   });
 });

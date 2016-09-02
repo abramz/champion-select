@@ -1,26 +1,8 @@
-import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { addChampionTag, removeChampionTag } from '../actions';
+import Checkbox from '../components/Checkbox';
 
-function Checkbox({ checked, className, filter, onChange }) {
-  const id = `champion-tag-${filter}`;
-
-  return (
-    <div className={className}>
-      <input id={id} name={id} type="checkbox" checked={checked} onChange={onChange} />
-      <label htmlFor={id}>{`  ${filter}`}</label>
-    </div>
-  );
-}
-
-Checkbox.propTypes = {
-  checked: PropTypes.bool.isRequired,
-  className: PropTypes.string.isRequired,
-  filter: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-};
-
-const mapStateToProps = ({ championTags }, { filter }) => ({
+export const mapStateToProps = ({ championTags }, { filter }) => ({
   /**
    * the checkbox is `checked` when the filter is active
    */
@@ -28,7 +10,7 @@ const mapStateToProps = ({ championTags }, { filter }) => ({
   filter,
 });
 
-const mapDispatchToProps = (dispatch, { filter }) => ({
+export const mapDispatchToProps = (dispatch, { filter }) => ({
   /**
    * if the checkbox is `checked`, then we dispatch the addChampionTag action with the filter
    * otherwise we dispatch the removeChampionTag action with the filter
