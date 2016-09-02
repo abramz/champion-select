@@ -7,7 +7,7 @@ import {
   __RewireAPI__ as RewireAPI,
 } from '../../../src/containers/ChampionTag';
 
-describe('ChampionTag', () => {
+describe('<ChampionTag />', () => {
   describe('mapStateToProps', () => {
     const allTheTags = ['a', 'b', 'c', 'd'];
     function setup(championTags, filter) {

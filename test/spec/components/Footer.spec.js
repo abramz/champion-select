@@ -5,7 +5,7 @@ import { UnstyledFooter } from '../../../src/components/Footer';
 import View from 'react-flexbox';
 import Link from '../../../src/components/Link';
 
-describe('Footer', () => {
+describe('<Footer />', () => {
   let wrapper;
 
   beforeEach(() => {

@@ -3,8 +3,8 @@ import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import App from '../../../src/components/App/App';
 
-describe('App', () => {
-  it('renders children correctly', () => {
+describe('<App />', () => {
+  it('should render the children correctly', () => {
     const wrapper = shallow(
       <App context={{ insertCss: () => {} }}>
         <div className="child" />

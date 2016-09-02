@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { mapStateToProps } from '../../../src/containers/VisibleChampionList';
 import champions from '../support/champions';
 
-describe('VisibleChampionList', () => {
+describe('<VisibleChampionList />', () => {
   describe('mapStateToProps', () => {
     const version = '1.2.3';
 

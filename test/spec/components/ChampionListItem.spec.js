@@ -5,7 +5,7 @@ import { images } from '../../../src/config';
 import { UnstyledChampionListItem } from '../../../src/components/ChampionListItem';
 import Link from '../../../src/components/Link';
 
-describe('ChampionListItem', () => {
+describe('<ChampionListItem />', () => {
   let wrapper;
   const champion = {
     key: 'key str',

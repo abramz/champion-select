@@ -5,7 +5,7 @@ import { UnstyledHeader } from '../../../src/components/Header';
 import View from 'react-flexbox';
 import Link from '../../../src/components/Link';
 
-describe('Header', () => {
+describe('<Header />', () => {
   let wrapper;
 
   beforeEach(() => {

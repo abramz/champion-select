@@ -7,7 +7,7 @@ import {
   __RewireAPI__ as RewireAPI,
 } from '../../../src/containers/ChampionSearch';
 
-describe('ChampionSearch', () => {
+describe('<ChampionSearch />', () => {
   const allTheTerms = ['a', 'bcd', 'EfG', 'H-J_k', 'LMNop', 'qR5', 't.u.v', 'VV', 'x', 'Y', 'so serious?'];
 
   describe('mapStateToProps', () => {

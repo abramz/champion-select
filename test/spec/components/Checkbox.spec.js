@@ -4,7 +4,7 @@ import sinon from 'sinon';
 import { shallow } from 'enzyme';
 import Checkbox from '../../../src/components/Checkbox';
 
-describe('Checkbox', () => {
+describe('<Checkbox />', () => {
   function setup(checked, className, filter) {
     const actions = {
       onCheckboxChange: sinon.spy(),

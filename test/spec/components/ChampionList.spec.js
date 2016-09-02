@@ -8,7 +8,7 @@ import {
 import View from 'react-flexbox';
 import Fixture from '../support/component.fixture';
 
-describe('ChampionList', () => {
+describe('<ChampionList />', () => {
   let wrapper;
   const champions = [
     {
@@ -47,13 +47,13 @@ describe('ChampionList', () => {
     expect(viewRef).to.have.style('justify-content', 'space-around');
   });
 
-  it('should render the first Fixture', () => {
+  it('should render the first <Fixture />', () => {
     const firstRef = wrapper.children().first();
     expect(firstRef).to.have.prop('champion', champions[0]);
     expect(firstRef).to.have.prop('version', '1.1.1');
   });
 
-  it('should render the second Fixture', () => {
+  it('should render the second <Fixture />', () => {
     const secondRef = wrapper.children().last();
     expect(secondRef).to.have.prop('champion', champions[1]);
     expect(secondRef).to.have.prop('version', '1.1.1');
