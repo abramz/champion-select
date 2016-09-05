@@ -4,7 +4,6 @@ import { SET_CHAMPION_SEARCH } from '../../../src/constants/ActionTypes';
 import {
   mapStateToProps,
   mapDispatchToProps,
-  __RewireAPI__ as RewireAPI,
 } from '../../../src/containers/ChampionSearch';
 
 describe('<ChampionSearch />', () => {
@@ -36,11 +35,6 @@ describe('<ChampionSearch />', () => {
 
     beforeEach(() => {
       dispatchSpy = sinon.spy();
-      RewireAPI.__Rewire__('dispatch', dispatchSpy);
-    });
-
-    afterEach(() => {
-      RewireAPI.__ResetDependency__('dispatch');
     });
 
     describe('#onChange()', () => {

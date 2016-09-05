@@ -1,7 +1,8 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Header.css';
-import { brandTitle } from '../../config';
+import { aboutPageTitle, brandTitle } from '../../constants';
+
 
 // components
 import View from 'react-flexbox';
@@ -16,7 +17,7 @@ export function UnstyledHeader() {
     <div className={s.root}>
       <View className={s.container} row style={style}>
         <Link className={s.brand} to="/">{brandTitle}</Link>
-        <Link className={s.link} to="/about">About</Link>
+        <Link className={s.link} to="/about">{aboutPageTitle}</Link>
       </View>
     </div>
   );

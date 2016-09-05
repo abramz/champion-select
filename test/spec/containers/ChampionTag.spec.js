@@ -4,7 +4,6 @@ import { ADD_CHAMPION_TAG, REMOVE_CHAMPION_TAG } from '../../../src/constants/Ac
 import {
   mapStateToProps,
   mapDispatchToProps,
-  __RewireAPI__ as RewireAPI,
 } from '../../../src/containers/ChampionTag';
 
 describe('<ChampionTag />', () => {
@@ -38,11 +37,6 @@ describe('<ChampionTag />', () => {
 
     beforeEach(() => {
       dispatchSpy = sinon.spy();
-      RewireAPI.__Rewire__('dispatch', dispatchSpy);
-    });
-
-    afterEach(() => {
-      RewireAPI.__ResetDependency__('dispatch');
     });
 
     describe('#onChange()', () => {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 import {
@@ -7,33 +7,20 @@ import {
 } from '../../../src/components/ChampionList';
 import View from 'react-flexbox';
 import Fixture from '../support/component.fixture';
+import champions from '../support/champions';
 
 describe('<ChampionList />', () => {
   let wrapper;
-  const champions = [
-    {
-      key: 'key str 0',
-      name: 'name str 0',
-      image: {
-        group: 'group str 0',
-        full: 'full0.png',
-      },
-    },
-    {
-      key: 'key str 1',
-      name: 'name str 1',
-      image: {
-        group: 'group str 1',
-        full: 'full1.png',
-      },
-    },
-  ];
   const version = '1.1.1';
 
   beforeEach(() => {
+    Fixture.propTypes = {
+      champion: PropTypes.object.isRequired,
+      version: PropTypes.string.isRequired,
+    };
     RewireAPI.__Rewire__('ChampionListItem', Fixture);
     wrapper = shallow(<UnstyledChampionList champions={champions} version={version} />);
-    expect(wrapper).to.have.exactly(2).descendants(Fixture);
+    expect(wrapper).to.have.exactly(champions.length).descendants(Fixture);
   });
 
   afterEach(() => {
@@ -47,15 +34,11 @@ describe('<ChampionList />', () => {
     expect(viewRef).to.have.style('justify-content', 'space-around');
   });
 
-  it('should render the first <Fixture />', () => {
-    const firstRef = wrapper.children().first();
-    expect(firstRef).to.have.prop('champion', champions[0]);
-    expect(firstRef).to.have.prop('version', '1.1.1');
-  });
-
-  it('should render the second <Fixture />', () => {
-    const secondRef = wrapper.children().last();
-    expect(secondRef).to.have.prop('champion', champions[1]);
-    expect(secondRef).to.have.prop('version', '1.1.1');
+  champions.forEach((champion, index) => {
+    it(`should render the champion at index: ${index}`, () => {
+      const child = wrapper.childAt(index);
+      expect(child).to.have.prop('version', version);
+      expect(child).to.have.prop('champion', champion);
+    });
   });
 });

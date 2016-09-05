@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ChampionListItem.css';
-import { images } from '../../config';
+import { images } from '../../constants';
 
 // components
 import Link from '../../components/Link';
