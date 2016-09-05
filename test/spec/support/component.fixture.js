@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Fixture(props) {
-  return <div {...props} />;
+function Fixture() {
+  return <div />;
 }
 
 export default Fixture;

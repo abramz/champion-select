@@ -19,22 +19,14 @@ describe('<VisibleChampionList />', () => {
 
     it('should return all champions that start with the search term', () => {
       const result = setup('a', []);
-      expect(result).to.deep.equal([
-        { key: 'A', name: 'Abcd', tags: ['a', 'b', 'c', 'd'] },
-        { key: 'a', name: 'abcd', tags: ['a', 'b', 'c', 'd'] },
-      ]);
+      // 'A' and 'a'
+      expect(result).to.deep.equal(champions.slice(0, 2));
     });
 
     it('should return all champions that have one of the tags', () => {
+      // 'A', 'a', 'B', 'b', 'C', and 'c'
       const result = setup('', ['a', 'c']);
-      expect(result).to.deep.equal([
-        { key: 'A', name: 'Abcd', tags: ['a', 'b', 'c', 'd'] },
-        { key: 'a', name: 'abcd', tags: ['a', 'b', 'c', 'd'] },
-        { key: 'B', name: 'Bcde', tags: ['b', 'c', 'd', 'e'] },
-        { key: 'b', name: 'bcde', tags: ['b', 'c', 'd', 'e'] },
-        { key: 'C', name: 'Cdef', tags: ['c', 'd', 'e', 'f'] },
-        { key: 'c', name: 'cdef', tags: ['c', 'd', 'e', 'f'] },
-      ]);
+      expect(result).to.deep.equal(champions.slice(0, 6));
     });
 
     it('should return no champions when the search does not match anything', () => {
@@ -42,7 +34,7 @@ describe('<VisibleChampionList />', () => {
       expect(result).to.deep.equal([]);
     });
 
-    it('should return no champions when the search does not match anything', () => {
+    it('should return no champions when the filters do not match anything', () => {
       const result = setup('', ['x', 'y', 'z']);
       expect(result).to.deep.equal([]);
     });
