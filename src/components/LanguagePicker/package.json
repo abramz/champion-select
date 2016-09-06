@@ -1,0 +1,6 @@
+{
+  "name": "LanguagePicker",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./LanguagePicker.js"
+}
