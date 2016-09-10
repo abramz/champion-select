@@ -25,4 +25,4 @@ exclude_paths:
   - "node_modules"
   - "test"
   - "tools"
-  - "src/data/types"
+  - "src/server/data/types"

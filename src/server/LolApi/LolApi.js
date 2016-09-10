@@ -100,4 +100,3 @@ class LolApi {
 
 export { LolApi };
 export default new LolApi();
-

@@ -45,7 +45,7 @@
       "src/**/*.js"
     ],
     "exclude": [
-      "src/data/types"
+      "src/server/data/types"
     ],
     "require": [
       "babel-register"
