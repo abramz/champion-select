@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import FastClick from 'fastclick';
 import UniversalRouter from 'universal-router';
@@ -11,6 +12,10 @@ import {
   windowScrollX,
   windowScrollY,
 } from './core/DOMUtils';
+import configureStore from './store/configureStore';
+
+// components
+import { Provider } from 'react-redux';
 
 const context = {
   insertCss: (...styles) => {
@@ -64,11 +69,11 @@ let renderComplete = (state, callback) => {
   };
 };
 
-function render(container, state, component) {
+function render(container, state, store, component) {
   return new Promise((resolve, reject) => {
     try {
       ReactDOM.render(
-        component,
+        <Provider store={store}>{component}</Provider>,
         container,
         renderComplete.bind(undefined, state, resolve)
       );
@@ -84,6 +89,10 @@ function run() {
 
   // Make taps on links and buttons work fast on mobiles
   FastClick.attach(document.body);
+
+  // create our Flux store
+  const initialState = window.__INITIAL_STATE__; // eslint-disable-line no-underscore-dangle
+  const store = configureStore(initialState);
 
   // Re-render the app when window.location changes
   function onLocationChange(location) {
@@ -102,7 +111,7 @@ function run() {
       query: location.query,
       state: location.state,
       context,
-      render: render.bind(undefined, container, location.state), // eslint-disable-line react/jsx-no-bind, max-len
+      render: render.bind(undefined, container, location.state, store), // eslint-disable-line react/jsx-no-bind, max-len
     }).catch(err => console.error(err)); // eslint-disable-line no-console
   }
 

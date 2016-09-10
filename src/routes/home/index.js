@@ -6,8 +6,7 @@ export default {
 
   path: '/',
 
-  async action({ query }) { // eslint-disable-line react/prop-types
-    const locale = query.locale || 'en_US';
+  async action() { // eslint-disable-line react/prop-types
     const options = `["${['image', 'tags'].join('", "')}"]`;
 
     const resp = await fetch('/graphql', {
@@ -18,7 +17,7 @@ export default {
       },
       body: JSON.stringify({
         query: `{
-          champions(locale: "${locale}", options: ${options}) {
+          champions(options: ${options}) {
             version
             data {
               key

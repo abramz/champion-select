@@ -16,11 +16,14 @@
       2,
       "prefer-double"
     ],
-    "react/require-extension": 0,
-    "react/jsx-filename-extension": 0,
     "import/extensions": 2,
-    "import/no-extraneous-dependencies": 0,
-    "import/imports-first": 0,
-    "generator-star-spacing": 0
+    "import/imports-first": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-filename-extension": "off",
+    "react/forbid-prop-types": "off",
+    "react/no-danger": "off",
+    "react/no-unused-prop-types": "off",
+    "react/require-extension": "off",
+    "generator-star-spacing": "off"
   }
 }

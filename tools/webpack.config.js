@@ -261,7 +261,7 @@ const clientConfig = extend(true, {}, config, {
 // -----------------------------------------------------------------------------
 
 const serverConfig = extend(true, {}, config, {
-  entry: './server.js',
+  entry: './startup.js',
 
   output: {
     path: path.resolve(__dirname, '../build'),
