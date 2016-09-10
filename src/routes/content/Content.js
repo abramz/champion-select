@@ -3,15 +3,14 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Content.css';
 
 class Content extends Component {
-
-  static contextTypes = {
-    setTitle: PropTypes.func.isRequired,
-  };
-
   static propTypes = {
     path: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
     title: PropTypes.string,
+  };
+
+  static contextTypes = {
+    setTitle: PropTypes.func.isRequired,
   };
 
   componentWillMount() {

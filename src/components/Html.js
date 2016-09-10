@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import { analytics } from '../config';
 
-function Html({ title, description, style, script, children }) {
+function Html({ title, description, language, style, script, children, initialState }) {
   return (
-    <html className="no-js" lang="en">
+    <html className="no-js" lang={language}>
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -17,12 +17,17 @@ function Html({ title, description, style, script, children }) {
       </head>
       <body>
         <div id="app" dangerouslySetInnerHTML={{ __html: children }} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.__INITIAL_STATE__=${JSON.stringify(initialState)}`,
+          }}
+        />
         {script && <script src={script} />}
         {analytics.google.trackingId &&
           <script
-            dangerouslySetInnerHTML={{ __html:
-            'window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;' +
-            `ga('create','${analytics.google.trackingId}','auto');ga('send','pageview')` }}
+            dangerouslySetInnerHTML={{
+              __html: `window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;ga('create','${analytics.google.trackingId}','auto');ga('send','pageview')`,
+            }}
           />
         }
         {analytics.google.trackingId &&
@@ -36,9 +41,11 @@ function Html({ title, description, style, script, children }) {
 Html.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired,
   style: PropTypes.string.isRequired,
   script: PropTypes.string,
   children: PropTypes.string,
+  initialState: PropTypes.object,
 };
 
 export default Html;

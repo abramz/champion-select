@@ -3,14 +3,16 @@ import { addChampionTag, removeChampionTag } from '../actions';
 import Checkbox from '../components/Checkbox';
 
 export const mapStateToProps = ({ championTags }, { filter }) => ({
+  filter,
+
   /**
    * the checkbox is `checked` when the filter is active
    */
   checked: championTags.indexOf(filter) > -1,
-  filter,
 });
 
 export const mapDispatchToProps = (dispatch, { filter }) => ({
+
   /**
    * if the checkbox is `checked`, then we dispatch the addChampionTag action with the filter
    * otherwise we dispatch the removeChampionTag action with the filter

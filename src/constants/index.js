@@ -20,11 +20,5 @@ officially involved in producing or managing League of Legends. League of Legend
 or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.`;
 
 /* Champions */
-// filters may come from riot's language strings if they have them...will worry about it later.
-export const championFilters = ['Assassin', 'Fighter', 'Mage', 'Support', 'Tank', 'Marksman'];
+export const championFilterKeys = ['Assassin', 'Fighter', 'Mage', 'Support', 'Tank', 'Marksman'];
 export const searchPlaceholder = 'Teemo...';
-
-/* Riot */
-export const images = {
-  baseUrl: '//ddragon.leagueoflegends.com/cdn',
-};

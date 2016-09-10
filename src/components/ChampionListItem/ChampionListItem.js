@@ -1,19 +1,21 @@
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './ChampionListItem.css';
-import { images } from '../../constants';
+
+// containers
+import withCdn from '../../containers/withCdn';
 
 // components
-import Link from '../../components/Link';
+import Link from '../Link';
 
-export function UnstyledChampionListItem({ champion, version }) {
+export function UnstyledChampionListItem({ cdnUrl, champion, version }) {
   return (
     <div className={s.champion}>
       <div className={s.championImageWrapper}>
         <Link to={`/champion/${champion.key}`}>
           <img
             className={s.championImage}
-            src={`${images.baseUrl}/${version}/img/${champion.image.group}/${champion.image.full}`}
+            src={`${cdnUrl}/${version}/img/${champion.image.group}/${champion.image.full}`}
             alt={champion.name}
             role="presentation"
           />
@@ -27,6 +29,7 @@ export function UnstyledChampionListItem({ champion, version }) {
 }
 
 UnstyledChampionListItem.propTypes = {
+  cdnUrl: PropTypes.string.isRequired,
   champion: PropTypes.shape({
     key: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -38,4 +41,6 @@ UnstyledChampionListItem.propTypes = {
   version: PropTypes.string.isRequired,
 };
 
-export default withStyles(s)(UnstyledChampionListItem);
+export const ChampionListItemWithCdn = withCdn(UnstyledChampionListItem);
+
+export default withStyles(s)(ChampionListItemWithCdn);

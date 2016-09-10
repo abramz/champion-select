@@ -20,7 +20,7 @@ const getVisibleChampions = (champions, search, tags) => (
       }
 
       if (tags && tags.length > 0) {
-        for (let i = tags.length - 1; i >= 0; i--) {
+        for (let i = tags.length - 1; i >= 0; i--) { // eslint-disable-line no-plusplus
           // break early, if 1 tag matches that is good enough
           if (champion.tags.indexOf(tags[i]) > -1) {
             return true;

@@ -9,7 +9,7 @@
 
 import Promise from 'bluebird';
 import fetch, { Request, Headers, Response } from 'node-fetch';
-import { host } from '../../config';
+import { host } from '../../server/constants';
 
 fetch.Promise = Promise;
 Response.Promise = Promise;

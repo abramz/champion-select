@@ -4,7 +4,7 @@ import s from './Home.css';
 import {
   brandTitle,
   welcomeText,
-  championFilters,
+  championFilterKeys,
   searchPlaceholder,
 } from '../../constants';
 
@@ -43,7 +43,7 @@ function Home({ data }, context) {
           </View>
           <View className={s.championFiltersContainer} style={championFiltersContainerFlex}>
             {
-              championFilters.map((filter, index) => (
+              championFilterKeys.map((filter, index) => (
                 <ChampionTag key={index} filter={filter} className={s.filter} />
               ))
             }

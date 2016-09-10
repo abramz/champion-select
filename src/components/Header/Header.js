@@ -3,7 +3,6 @@ import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Header.css';
 import { aboutPageTitle, brandTitle } from '../../constants';
 
-
 // components
 import View from 'react-flexbox';
 import Link from '../Link';
