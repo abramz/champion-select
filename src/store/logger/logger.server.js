@@ -6,7 +6,7 @@ export default function createLogger() {
     const formattedPayload = inspect(action.payload, {
       colors: true,
     });
-    console.log(` * ${action.type}: ${formattedPayload}`); // eslint-disable-line no-console
+    console.log(` * ${action.type}: ${formattedPayload}`);
     return next(action);
   };
 }
