@@ -25,6 +25,6 @@
     "react/no-unused-prop-types": 0,
     "react/require-extension": 0,
     "arrow-parens": 0,
-    "generator-star-spacing": 0,
+    "generator-star-spacing": 0
   }
 }
