@@ -29,7 +29,7 @@ function render(config) {
       store.dispatch(setRuntimeVariable('cdnUrl', config.cdnUrl));
 
       await UniversalRouter.resolve(routes, {
-        path: req.path,
+        path: req.baseUrl, // this should really be `req.path`, but that is returning `/` for `/about` and `/champion/:key`
         query: req.query,
         context: {
           insertCss: (...styles) => {
