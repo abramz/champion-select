@@ -39,7 +39,7 @@ describe('<VisibleChampionList />', () => {
       },
     ].forEach(({ test, championSearch, championTags, expected }) => {
       it(test, () => {
-        const actual = mapStateToProps({ championSearch, championTags }, { champions: champions });
+        const actual = mapStateToProps({ championSearch, championTags }, { champions });
 
         expect(actual).to.haveOwnProperty('items');
         expect(actual.items).to.deep.equal(expected);
