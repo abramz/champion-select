@@ -1,7 +1,11 @@
 import React from 'react';
 
-function Fixture() {
-  return <div />;
+function getFixture() {
+  function Fixture() {
+    return <div />;
+  }
+
+  return Fixture;
 }
 
-export default Fixture;
+export default getFixture;

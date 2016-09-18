@@ -37,16 +37,20 @@ describe('LolApi/validators', () => {
       expect(getValidChampOpts(['all', 'foo', 'blurb', 'bar', 'baz', 'partype'])).to.equal('all,blurb,partype');
     });
 
-    it('should throw an error if the options or keys provided are not arrays', () => {
+    it('should throw an error if the validKeys argument is not an array', () => {
       Object.assign(replacedRiot, riot, { champOpts: null });
-
-      expect(() => {
-        getValidChampOpts();
-      }).to.throw(Error, /options argument/);
 
       expect(() => {
         getValidChampOpts([]);
       }).to.throw(Error, /validKeys argument/);
+    });
+
+    it('should not throw an error if the options are not provided', () => {
+      Object.assign(replacedRiot, riot, { champOpts: null });
+
+      expect(() => {
+        getValidChampOpts();
+      }).to.not.throw(Error, /options argument/);
     });
   });
 
@@ -76,16 +80,20 @@ describe('LolApi/validators', () => {
       expect(getValidItemOpts(['all', 'foo', 'requiredChampion', 'bar', 'baz', 'stats'])).to.equal('all,requiredChampion,stats');
     });
 
-    it('should throw an error if the options or keys provided are not arrays', () => {
+    it('should throw an error if the validKeys argument is not an array', () => {
       Object.assign(replacedRiot, riot, { itemOpts: null });
-
-      expect(() => {
-        getValidItemOpts();
-      }).to.throw(Error, /options argument/);
 
       expect(() => {
         getValidItemOpts([]);
       }).to.throw(Error, /validKeys argument/);
+    });
+
+    it('should not throw an error if the options are not provided', () => {
+      Object.assign(replacedRiot, riot, { itemOpts: null });
+
+      expect(() => {
+        getValidItemOpts();
+      }).to.not.throw(Error, /options argument/);
     });
   });
 
@@ -115,16 +123,20 @@ describe('LolApi/validators', () => {
       expect(getValidItemListOpts(['all', 'foo', 'requiredChampion', 'bar', 'baz', 'tree'])).to.equal('all,requiredChampion,tree');
     });
 
-    it('should throw an error if the options or keys provided are not arrays', () => {
+    it('should throw an error if the validKeys argument is not an array', () => {
       Object.assign(replacedRiot, riot, { itemListOpts: null });
-
-      expect(() => {
-        getValidItemListOpts();
-      }).to.throw(Error, /options argument/);
 
       expect(() => {
         getValidItemListOpts([]);
       }).to.throw(Error, /validKeys argument/);
+    });
+
+    it('should not throw an error if the options are not provided', () => {
+      Object.assign(replacedRiot, riot, { itemListOpts: null });
+
+      expect(() => {
+        getValidItemListOpts();
+      }).to.not.throw(Error, /options argument/);
     });
   });
 

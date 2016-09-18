@@ -1,9 +1,12 @@
+@import '../../styles/variables.css';
+
 .root {
   padding-left: 20px;
   padding-right: 20px;
 }
 
 .container {
+  max-width: var(--max-content-size);
   margin: 0 auto;
   padding: 0 0 40px;
 }

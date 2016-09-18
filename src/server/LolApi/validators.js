@@ -2,6 +2,11 @@ import validator from 'validator';
 import { riot } from './constants';
 
 function getValidOpts(options, validKeys) {
+  // if no options were provided return undefined
+  if (!options) {
+    return null;
+  }
+
   if (!Array.isArray(options)) {
     throw new Error(`options argument provided is not valid, "${options}". Expected an array.`);
   }
@@ -48,6 +53,16 @@ function checkString(key, str, pattern) {
   }
 
   return true;
+}
+
+export function checkKey(key, possibilities) {
+  checkString('key', key, /.*/); // just make sure it is a string
+  const foundKeyPair = possibilities.find((keyPair) => keyPair.key.toLowerCase() === key.toLowerCase());
+
+  if (!foundKeyPair) {
+    throw new Error(`Found no possible keys for: "${key}".`);
+  }
+  return foundKeyPair;
 }
 
 export function checkLocale(locale) {

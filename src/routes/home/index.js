@@ -34,6 +34,8 @@ export default {
       credentials: 'include',
     });
 
+    if (resp.status !== 200) throw new Error(resp.statusText);
+
     const result = await resp.json();
     if (!result || !result.data) {
       console.log(result.errors);
