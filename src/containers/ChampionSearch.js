@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setChampionSearch } from '../actions';
+import { setChampionSearch } from '../actions/champions';
 
 export const mapStateToProps = ({ championSearch }, { className, placeholder, type }) => ({
   className,

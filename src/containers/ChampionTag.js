@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addChampionTag, removeChampionTag } from '../actions';
+import { addChampionTag, removeChampionTag } from '../actions/champions';
 import Checkbox from '../components/Checkbox';
 
 export const mapStateToProps = ({ championTags, runtime }, { filter }) => ({
