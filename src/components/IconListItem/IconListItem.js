@@ -1,7 +1,10 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import createFragment from 'react-addons-create-fragment';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './IconListItem.css';
+
+// prop types
+import { IconListItemPropTypes } from '../../constants/propTypes';
 
 // containers
 import CdnImage from '../../containers/CdnImage';
@@ -50,15 +53,6 @@ export function UnstyledIconListItem({ item }) {
   );
 }
 
-UnstyledIconListItem.propTypes = {
-  item: PropTypes.shape({
-    key: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    group: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    ref: PropTypes.string,
-    withVersion: PropTypes.bool,
-  }),
-};
+UnstyledIconListItem.propTypes = IconListItemPropTypes;
 
 export default withStyles(s)(UnstyledIconListItem);

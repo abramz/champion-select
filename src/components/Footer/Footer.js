@@ -24,7 +24,7 @@ export function UnstyledFooter() {
           <span className={s.spacer}>·</span>
           <Link className={s.link} to="/about">{aboutPageTitle}</Link>
           <span className={s.spacer}>·</span>
-          <a className={s.link} href={github.link}>{github.text}</a>
+          <Link className={s.link} to={github.link}>{github.text}</Link>
         </div>
         <br />
         <div>

@@ -18,7 +18,6 @@ export default {
       body: JSON.stringify({
         query: `{
           champions(options: ${options}) {
-            version
             data {
               key
               name

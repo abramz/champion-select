@@ -1,6 +1,9 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './IconList.css';
+
+// prop types
+import { IconListPropTypes } from '../../constants/propTypes';
 
 // components
 import View from 'react-flexbox';
@@ -22,15 +25,6 @@ export function UnstyledIconList({ items }) {
   );
 }
 
-UnstyledIconList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    key: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    group: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    ref: PropTypes.string,
-    withVersion: PropTypes.bool,
-  })).isRequired,
-};
+UnstyledIconList.propTypes = IconListPropTypes;
 
 export default withStyles(s)(UnstyledIconList);
