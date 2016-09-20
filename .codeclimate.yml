@@ -9,6 +9,8 @@ engines:
     config:
       languages:
         - javascript
+    exclude_fingerprints:
+      - 6214f6f329b74c779a236048fa0c595b
   fixme:
     enabled: true
 ratings:
