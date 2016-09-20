@@ -18,7 +18,6 @@ export default {
       body: JSON.stringify({
         query: `{
           champions(options: ${options}) {
-            version
             data {
               key
               name
@@ -33,6 +32,8 @@ export default {
       }),
       credentials: 'include',
     });
+
+    if (resp.status !== 200) throw new Error(resp.statusText);
 
     const result = await resp.json();
     if (!result || !result.data) {

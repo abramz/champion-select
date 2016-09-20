@@ -18,9 +18,12 @@ export default {
       }),
       credentials: 'include',
     });
+
     if (resp.status !== 200) throw new Error(resp.statusText);
+
     const { data } = await resp.json();
     if (!data || !data.content) return undefined;
+
     return <Content {...data.content} />;
   },
 

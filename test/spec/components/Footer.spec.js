@@ -24,9 +24,8 @@ describe('<Footer />', () => {
 
     wrapper = shallow(<UnstyledFooter />);
 
-    expect(wrapper).to.have.exactly(2).descendants(Link);
+    expect(wrapper).to.have.exactly(3).descendants(Link);
     expect(wrapper).to.have.exactly(5).descendants('span');
-    expect(wrapper).to.have.exactly(1).descendants('a');
   });
 
   afterEach(() => {
@@ -43,13 +42,13 @@ describe('<Footer />', () => {
   });
 
   it('should have a link to Home', () => {
-    const homeRef = wrapper.find(Link).first();
+    const homeRef = wrapper.find(Link).at(0);
     expect(homeRef).to.have.prop('to', '/');
     expect(homeRef).to.have.prop('children', homePageTitle);
   });
 
   it('should have a link to About', () => {
-    const aboutRef = wrapper.find(Link).last();
+    const aboutRef = wrapper.find(Link).at(1);
     expect(aboutRef).to.have.prop('to', '/about');
     expect(aboutRef).to.have.prop('children', aboutPageTitle);
   });
@@ -65,8 +64,8 @@ describe('<Footer />', () => {
   });
 
   it('should have a link to GitHub', () => {
-    const aRef = wrapper.find('a').first();
-    expect(aRef).to.have.prop('href', github.link);
-    expect(aRef).to.have.prop('children', github.text);
+    const githubRef = wrapper.find(Link).at(2);
+    expect(githubRef).to.have.prop('to', github.link);
+    expect(githubRef).to.have.prop('children', github.text);
   });
 });

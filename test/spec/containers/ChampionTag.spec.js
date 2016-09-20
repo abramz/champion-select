@@ -10,7 +10,8 @@ describe('<ChampionTag />', () => {
   describe('mapStateToProps', () => {
     const allTheTags = ['a', 'b', 'c', 'd'];
     function setup(championTags, filter) {
-      const result = mapStateToProps({ championTags }, { filter });
+      const runtime = { languageStrings: { z: 'z' } };
+      const result = mapStateToProps({ championTags, runtime }, { filter });
       expect(result.filter).to.equal(filter, 'mapStateToProps should always return the filter as is');
 
       return result.checked;

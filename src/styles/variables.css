@@ -3,6 +3,7 @@
   --font-family-base: 'Roboto', sans-serif;
 
   /* color */
+  --text-white: #fff;
   --text-light: #ccc;
   --text-dark: #333;
   --text-header: #00b3e4;

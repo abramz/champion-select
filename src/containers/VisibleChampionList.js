@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ChampionList from '../components/ChampionList';
+import IconList from '../components/IconList';
 
 /**
  * Return a list of champions sorted by key alphabetically and filtered by the search term and tags
@@ -39,8 +39,8 @@ const getVisibleChampions = (champions, search, tags) => (
      * Sort the list of champions by key while ignoring case
      */
     .sort((a, b) => {
-      const keyA = a.key.toUpperCase();
-      const keyB = b.key.toUpperCase();
+      const keyA = a.name.toLowerCase();
+      const keyB = b.name.toLowerCase();
 
       if (keyA < keyB) {
         return -1;
@@ -52,18 +52,26 @@ const getVisibleChampions = (champions, search, tags) => (
 
       return 0;
     })
+
+    /**
+     * Map the champions to a generic iconItem to be rendered by the IconList
+     */
+    .map((champion) => ({
+      key: champion.key,
+      title: champion.name,
+      group: champion.image.group,
+      image: champion.image.full,
+      ref: `/champion/${champion.key}`,
+      withVersion: true,
+    }))
 );
 
-export const mapStateToProps = ({ championSearch, championTags }, { champions, version }) => ({
-  /**
-   * The version of League of Legends we are working with
-   */
-  version,
+export const mapStateToProps = ({ championSearch, championTags }, { champions }) => ({
   /**
    * The list of champions to display based on the search term and filters
    */
-  champions: getVisibleChampions(champions, championSearch, championTags),
+  items: getVisibleChampions(champions, championSearch, championTags),
 });
 
-const VisibleChampionList = connect(mapStateToProps)(ChampionList);
+const VisibleChampionList = connect(mapStateToProps)(IconList);
 export default VisibleChampionList;

@@ -20,7 +20,6 @@ function Home({ data }, context) {
   context.setTitle(brandTitle);
 
   const champions = data.data;
-  const version = data.version;
 
   const championSearchContainerFlex = {
     justifyContent: 'center',
@@ -48,7 +47,7 @@ function Home({ data }, context) {
               ))
             }
           </View>
-          <VisibleChampionList champions={champions} version={version} />
+          <VisibleChampionList champions={champions} />
         </View>
       </div>
     </div>

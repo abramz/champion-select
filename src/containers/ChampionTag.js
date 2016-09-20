@@ -1,9 +1,12 @@
 import { connect } from 'react-redux';
-import { addChampionTag, removeChampionTag } from '../actions';
+import { addChampionTag, removeChampionTag } from '../actions/champions';
 import Checkbox from '../components/Checkbox';
 
-export const mapStateToProps = ({ championTags }, { filter }) => ({
-  filter,
+export const mapStateToProps = ({ championTags, runtime }, { filter }) => ({
+  /**
+   * If we can find the filter in Riot's languageStrings, use it, otherwise use the english word
+   */
+  filter: runtime.languageStrings[filter] || filter,
 
   /**
    * the checkbox is `checked` when the filter is active

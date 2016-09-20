@@ -3,7 +3,7 @@ import {
   setChampionSearch,
   addChampionTag,
   removeChampionTag,
-} from '../../../src/actions';
+} from '../../../src/actions/champions';
 import {
   SET_CHAMPION_SEARCH,
   ADD_CHAMPION_TAG,

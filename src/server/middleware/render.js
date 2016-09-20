@@ -27,6 +27,8 @@ function render(config) {
       // get the initial state
       const store = configureStore({});
       store.dispatch(setRuntimeVariable('cdnUrl', config.cdnUrl));
+      store.dispatch(setRuntimeVariable('versions', config.versions));
+      store.dispatch(setRuntimeVariable('languageStrings', config.languageStrings));
 
       await UniversalRouter.resolve(routes, {
         path: req.baseUrl, // this should really be `req.path`, but that is returning `/` for `/about` and `/champion/:key`

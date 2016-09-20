@@ -1,5 +1,6 @@
 import {
   checkId,
+  checkKey,
   checkLocale,
   checkVersion,
   getValidChampOpts,
@@ -13,10 +14,22 @@ class LolApi {
   constructor() {
     // this is a promise that we have to await later
     this.serverPromise = this.get(api.server);
+    // keep this around so we don't repeatedly have to get the id:key map
+    this.championNamesPromise = this.getChampions()
+      .then((result) => Object.values(result.data).map(({ id, key }) => ({ id, key })));
   }
 
   getChampion(args) {
     return this.get(api.champion, args);
+  }
+
+  async getChampionByKey(args) {
+    const key = args && args.key ? args.key : null;
+    const options = args && args.options ? args.options : null;
+    const champions = await this.championNamesPromise;
+
+    const keyPair = checkKey(key, champions);
+    return this.getChampion({ id: `${keyPair.id}`, options });
   }
 
   getChampions(args) {
@@ -87,7 +100,10 @@ class LolApi {
       } else {
         throw new Error(`Unknown options parameter, ${type.getOpts}.`);
       }
-      query = `${type.getOpts}=${optString}`;
+
+      if (optString) {
+        query = `${type.getOpts}=${optString}`;
+      }
     }
 
     if (id) {

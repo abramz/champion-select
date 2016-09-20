@@ -1,13 +1,13 @@
 @import '../../styles/variables.css';
 
-.champion {
+.item {
   display: inline-block;
   margin-bottom: 16px;
   text-align: center;
   min-width: 120px;
 }
 
-.championImageWrapper {
+.imageWrapper {
   display: inline-block;
   margin: 6px auto;
   box-sizing: border-box;
@@ -16,14 +16,14 @@
   border: 1px solid rgba(84, 84, 84, 0.3);
 }
 
-.championImage {
+.image {
   width: 80px;
 }
 
-.championText,
-.championText:hover,
-.championText:active,
-.championText:visited {
+.title,
+.title:hover,
+.title:active,
+.title:visited {
   text-decoration: none;
   color: var(--text-dark);
 }
