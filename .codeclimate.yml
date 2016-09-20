@@ -11,6 +11,7 @@ engines:
         - javascript
     exclude_fingerprints:
       - 6214f6f329b74c779a236048fa0c595b
+      - 72b6d969d0c80e43b3362e7e9906bfb5
   fixme:
     enabled: true
 ratings:
