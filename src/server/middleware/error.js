@@ -19,7 +19,7 @@ function error() {
         description={err.message}
         style={errorPageStyle._getCss()} // eslint-disable-line no-underscore-dangle
       >
-      {ReactDOM.renderToString(<ErrorPage error={err} />)}
+        {ReactDOM.renderToString(<ErrorPage error={err} />)}
       </Html>
     );
     res.status(statusCode);
