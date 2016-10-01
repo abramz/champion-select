@@ -1,7 +1,7 @@
 import lolApi from '../../LolApi';
 import ChampionType from '../types/ChampionType';
 import {
-  idType,
+  keyType,
   optionsType,
 } from '../types/constants';
 
@@ -12,7 +12,7 @@ import {
 const champion = {
   type: ChampionType,
   args: {
-    id: idType,
+    key: keyType,
     options: optionsType,
   },
 
@@ -20,17 +20,17 @@ const champion = {
    * How to retrieve a specific champion by id
    * GraphQL will validate the arguments for us
    * @param root - arguments passed to each request by the server
-   * @param id - the id of the champion to retrieve
+   * @param key - the key of the champion to retrieve
    * @param locale - the locale to retrieve this data for
    * @param options - what fields are we looking for
    * @returns {ChampionType}
    */
-  async resolve(root, { id, options }) {
+  async resolve(root, { key, options }) {
     try {
-      return await lolApi.getChampion({ id, options });
+      return await lolApi.getChampionByKey({ key, options });
     } catch (error) {
-      console.log(id, options, error);
-      throw new Error(`Unable to retrieve champion id: "${id}".`);
+      console.log(key, options, error);
+      throw new Error(`Unable to retrieve champion key: "${key}".`);
     }
   },
 };

@@ -5,5 +5,6 @@ import {
 } from 'graphql';
 
 export const idType = { type: new NonNull(StringType) };
+export const keyType = { type: new NonNull(StringType) };
 export const localeType = { type: new NonNull(StringType) };
 export const optionsType = { type: new ListType(StringType) };

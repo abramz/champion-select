@@ -1,0 +1,17 @@
+@import '../../styles/variables.css';
+
+.root {
+  padding: 4px 8px;
+  box-shadow: 0 2px 2px 0 rgba(50, 50, 50, 0.75);
+  color: var(--text-white);
+  text-align: center;
+  background-color: var(--backround-dark);
+}
+
+.header {
+  flex: 1 0 auto;
+}
+
+.headerSelected {
+  border-bottom: 4px solid var(--background-light);
+}

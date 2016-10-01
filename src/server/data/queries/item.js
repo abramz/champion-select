@@ -17,10 +17,10 @@ const item = {
   },
 
   /**
-   * How to retrieve a specific item by id
+   * How to retrieve a specific iconItem by id
    * GraphQL will validate the arguments for us
    * @param root - arguments passed to each request by the server
-   * @param id - the id of the item to retrieve
+   * @param id - the id of the iconItem to retrieve
    * @param locale - the locale to retrieve this data for
    * @param options - what fields are we looking for
    * @returns {ItemType}

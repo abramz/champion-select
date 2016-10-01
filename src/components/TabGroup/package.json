@@ -1,0 +1,6 @@
+{
+  "name": "TabGroup",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./TabGroup.js"
+}

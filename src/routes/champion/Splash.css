@@ -1,0 +1,530 @@
+.splash {
+  overflow: hidden;
+  box-shadow: 0 0 5px 0 rgba(50, 50, 50, 0.75);
+  height: 100%;
+  width: 100%;
+}
+
+.splashAatrox {
+  transform: scaleX(1) translate(-45px, 0px);
+}
+
+.splashAhri {
+  transform: scaleX(1) translate(0px, -10px);
+}
+
+.splashAkali {
+  transform: scaleX(1) translate(0px, -50px);
+}
+
+.splashAlistar {
+  transform: scaleX(1) translate(-24px, -30px);
+}
+
+.splashAmumu {
+  transform: scaleX(1) translate(0px, -60px);
+}
+
+.splashAnivia {
+  transform: scaleX(1) translate(-45px, -40px);
+}
+
+.splashAnnie {
+  transform: scaleX(1) translate(-45px, 0px);
+}
+
+.splashAurelionSol {
+  transform: scaleX(1) translate(0px, 0px);
+}
+
+.splashAzir {
+  transform: scaleX(1) translate(-45px, 0px);
+}
+
+.splashBard {
+  transform: scaleX(1) translate(0px, 0px);
+}
+
+.splashBlitzcrank {
+  transform: scaleX(1) translate(0px, -120px);
+}
+
+.splashBrand {
+  transform: scaleX(1) translate(0px, -50px);
+}
+
+.splashBraum {
+  transform: scaleX(1) translate(0px, -70px);
+}
+
+.splashCaitlyn {
+  transform: scaleX(1) translate(0px, -10px);
+}
+
+.splashCassiopeia {
+  transform: scaleX(1) translate(-45px, -50px);
+}
+
+.splashChogath {
+  transform: scaleX(1) translate(-45px, -250px);
+}
+
+.splashCorki {
+  transform: scaleX(1) translate(-45px, -60px);
+}
+
+.splashDarius {
+  transform: scaleX(1) translate(-45px, -5px);
+}
+
+.splashDiana {
+  transform: scaleX(1) translate(-45px, -40px);
+}
+
+.splashDraven {
+  transform: scaleX(1) translate(-45px, 0px);
+}
+
+.splashDrMundo {
+  transform: scaleX(1) translate(-45px, 0px);
+}
+
+.splashEkko {
+  transform: scaleX(1) translate(-45px, -10px);
+}
+
+.splashElise {
+  transform: scaleX(1) translate(-45px, 0px);
+}
+
+.splashEvelynn {
+  transform: scaleX(1) translate(-45px, 0px);
+}
+
+.splashEzreal {
+  transform: scaleX(1) translate(-45px, -20px);
+}
+
+.splashFiddleSticks {
+  transform: scaleX(1) translate(-45px, -180px);
+}
+
+.splashFiora {
+  transform: scaleX(1) translate(-45px, -85px);
+}
+
+.splashFizz {
+  transform: scaleX(1) translate(-45px, -100px);
+}
+
+.splashGalio {
+  transform: scaleX(1) translate(-45px, -20px);
+}
+
+.splashGangplank {
+  transform: scaleX(1) translate(-45px, -50px);
+}
+
+.splashGaren {
+  transform: scaleX(1) translate(0px, -30px);
+}
+
+.splashGnar {
+  transform: scaleX(1) translate(-45px, -10px);
+}
+
+.splashGragas {
+  transform: scaleX(1) translate(0px, -100px);
+}
+
+.splashGraves {
+  transform: scaleX(1) translate(0px, -40px);
+}
+
+.splashHecarim {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashHeimerdinger {
+  transform: scaleX(1) translate(-10px, -130px);
+}
+
+.splashIllaoi {
+  transform: scaleX(1) translate(0px, 0px);
+}
+
+.splashIrelia {
+  transform: scaleX(1) translate(0px, -25px);
+}
+
+.splashJanna {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashJarvanIV {
+  transform: scaleX(1) translate(-25px, -30px);
+}
+
+.splashJax {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashJayce {
+  transform: scaleX(1) translate(0px, -10px);
+}
+
+.splashJhin {
+  transform: scaleX(1) translate(0, -10px);
+}
+
+.splashJinx {
+  transform: scaleX(1) translate(-45px, -60px);
+}
+
+.splashKalista {
+  transform: scaleX(1) translate(0px, -80px);
+}
+
+.splashKarma {
+  transform: scaleX(1) translate(-30px, -20px);
+}
+
+.splashKarthus {
+  transform: scaleX(1) translate(0px, -10px);
+}
+
+.splashKassadin {
+  transform: scaleX(1) translate(0px, -30px);
+}
+
+.splashKatarina {
+  transform: scaleX(1) translate(0px, -80px);
+}
+
+.splashKayle {
+  transform: scaleX(1) translate(0px, -70px);
+}
+
+.splashKennen {
+  transform: scaleX(1) translate(-20px, -80px);
+}
+
+.splashKhazix {
+  transform: scaleX(1) translate(0px, -170px);
+}
+
+.splashKindred {
+  transform: scaleX(1) translate(-20px, -100px);
+}
+
+.splashKled {
+  transform: scaleX(1) translate(-40px, -40px);
+}
+
+.splashKogMaw {
+  transform: scaleX(1) translate(-20px, -50px);
+}
+
+.splashLeblanc {
+  transform: scaleX(1) translate(-45px, -30px);
+}
+
+.splashLeeSin {
+  transform: scaleX(1) translate(-20px, -55px);
+}
+
+.splashLeona {
+  transform: scaleX(1) translate(0px, -40px);
+}
+
+.splashLissandra {
+  transform: scaleX(1) translate(0px, -10px);
+}
+
+.splashLucian {
+  transform: scaleX(1) translate(-10px, -10px);
+}
+
+.splashLulu {
+  transform: scaleX(1) translate(0px, -50px);
+}
+
+.splashLux {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashMalphite {
+  transform: scaleX(1) translate(0px, -230px);
+}
+
+.splashMalzahar {
+  transform: scaleX(1) translate(-45px, -30px);
+}
+
+.splashMaokai {
+  transform: scaleX(1) translate(0px, -105px);
+}
+
+.splashMasterYi {
+  transform: scaleX(1) translate(0px, -40px);
+}
+
+.splashMissFortune {
+  transform: scaleX(1) translate(0px, -30px);
+}
+
+.splashMonkeyKing {
+  transform: scaleX(1) translate(0px, -100px);
+}
+
+.splashMordekaiser {
+  transform: scaleX(1) translate(-30px, -50px);
+}
+
+.splashMorgana {
+  transform: scaleX(1) translate(-20px, -100px);
+}
+
+.splashNami {
+  transform: scaleX(1) translate(-10px, -110px);
+}
+
+.splashNasus {
+  transform: scaleX(1) translate(0px, -40px);
+}
+
+.splashNautilus {
+  transform: scaleX(1) translate(0px,-130px);
+}
+
+.splashNidalee {
+  transform: scaleX(1) translate(-45px, -10px);
+}
+
+.splashNocturne {
+  transform: scaleX(1) translate(-20px, -110px);
+}
+
+.splashNunu {
+  transform: scaleX(1) translate(0px, -30px);
+}
+
+.splashOlaf {
+  transform: scaleX(1) translate(0px, -80px);
+}
+
+.splashOrianna {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashPantheon {
+  transform: scaleX(1) translate(-25px, -50px);
+}
+
+.splashPoppy {
+  transform: scaleX(1) translate(-20px, -50px);
+}
+
+.splashQuinn {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashRammus {
+  transform: scaleX(1) translate(0px, -110px);
+}
+
+.splashRekSai {
+  transform: scaleX(1) translate(0px, -150px);
+}
+
+.splashRenekton {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashRengar {
+  transform: scaleX(1) translate(0px, -170px);
+}
+
+.splashRiven {
+  transform: scaleX(1) translate(0px, -40px);
+}
+
+.splashRumble {
+  transform: scaleX(1) translate(-45px, -90px);
+}
+
+.splashRyze {
+  transform: scaleX(1) translate(-45px, -140px);
+}
+
+.splashSejuani {
+  transform: scaleX(1) translate(0px, -40px);
+}
+
+.splashShaco {
+  transform: scaleX(1) translate(0px, -250px);
+}
+
+.splashShen {
+  transform: scaleX(1) translate(0px, -100px);
+}
+
+.splashShyvana {
+  transform: scaleX(1) translate(0px, -30px);
+}
+
+.splashSinged {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashSion {
+  transform: scaleX(1) translate(-20px, -60px);
+}
+
+.splashSivir {
+  transform: scaleX(1) translate(0px, -30px);
+}
+
+.splashSkarner {
+  transform: scaleX(1) translate(-45px, -100px);
+}
+
+.splashSona {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashSoraka {
+  transform: scaleX(1) translate(0px, 0px);
+}
+
+.splashSwain {
+  transform: scaleX(1) translate(-45px, -30px);
+}
+
+.splashSyndra {
+  transform: scaleX(1) translate(0px, -40px);
+}
+
+.splashTahmKench {
+  transform: scaleX(1) translate(-45px, -130px);
+}
+
+.splashTaliyah {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashTalon {
+  transform: scaleX(1) translate(-10px, -100px);
+}
+
+.splashTaric {
+  transform: scaleX(1) translate(0px, -30px);
+}
+
+.splashTeemo {
+  transform: scaleX(1) translate(0px, -120px);
+}
+
+.splashThresh {
+  transform: scaleX(1) translate(0px, -10px);
+}
+
+.splashTristana {
+  transform: scaleX(1) translate(-10px, -50px);
+}
+
+.splashTrundle {
+  transform: scaleX(1) translate(-45px, -20px);
+}
+
+.splashTryndamere {
+  transform: scaleX(1) translate(0px, -80px);
+}
+
+.splashTwistedFate {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashTwitch {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashUdyr {
+  transform: scaleX(1) translate(0px, -60px);
+}
+
+.splashUrgot {
+  transform: scaleX(1) translate(-20px, 0px);
+}
+
+.splashVarus {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashVayne {
+  transform: scaleX(1) translate(-10px, 0px);
+}
+
+.splashVeigar {
+  transform: scaleX(1) translate(0px, -80px);
+}
+
+.splashVelkoz {
+  transform: scaleX(1) translate(0px, -130px);
+}
+
+.splashVi {
+  transform: scaleX(1) translate(0px, -20px);
+}
+
+.splashViktor {
+  transform: scaleX(1) translate(0px, 0px);
+}
+
+.splashVladimir {
+  transform: scaleX(1) translate(-45px, -10px);
+}
+
+.splashVolibear {
+  transform: scaleX(1) translate(0px, -100px);
+}
+
+.splashWarwick {
+  transform: scaleX(1) translate(-45px, -45px);
+}
+
+.splashXerath {
+  transform: scaleX(1) translate(-30px, -30px);
+}
+
+.splashXinZhao {
+  transform: scaleX(1) translate(0px, -50px);
+}
+
+.splashYasuo {
+  transform: scaleX(1) translate(0px, -10px);
+}
+
+.splashYorick {
+  transform: scaleX(1) translate(0px, 0px);
+}
+
+.splashZac {
+  transform: scaleX(1) translate(0px, -240px);
+}
+
+.splashZed {
+  transform: scaleX(1) translate(0px, 0px);
+}
+
+.splashZiggs {
+  transform: scaleX(1) translate(-45px, -110px);
+}
+
+.splashZilean {
+  transform: scaleX(1) translate(-20px, -10px);
+}
+
+.splashZyra {
+  transform: scaleX(1) translate(0px, -70px);
+}

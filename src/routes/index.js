@@ -2,6 +2,7 @@ import React from 'react';
 
 // Child routes
 import home from './home';
+import champion from './champion';
 import content from './content';
 import error from './error';
 
@@ -15,6 +16,7 @@ export default {
   // keep in mind, routes are evaluated in order
   children: [
     home,
+    champion,
 
     // place new routes before...
     content,

@@ -1,0 +1,47 @@
+@import '../../styles/variables.css';
+@import './Splash.css';
+
+.root {
+  margin: 0 16px;
+}
+
+.container {
+  max-width: var(--max-content-size);
+  margin: auto;
+  padding: 12px 24px;
+}
+
+.header {
+  height: 312px;
+  width: 100%;
+  position: relative;
+}
+
+.title {
+  color: var(--text-white);
+  text-shadow: 0 3px 3px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 230px;
+  left: 40px;
+  width: 100%;
+}
+
+.title > h2 {
+  margin: 0;
+}
+
+.title > h3 {
+  margin: 0;
+}
+
+.main {
+  margin-top: 8px;
+}
+
+.left {
+  margin-right: 4px;
+}
+
+.right {
+  margin-left: 4px;
+}

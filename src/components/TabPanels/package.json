@@ -1,0 +1,6 @@
+{
+  "name": "TabPanels",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./TabPanels.js"
+}

@@ -12,7 +12,7 @@
   margin: 6px auto;
   box-sizing: border-box;
   padding: 4px;
-  background-color: #fff;
+  background-color: var(--background-light);
   border: 1px solid rgba(84, 84, 84, 0.3);
 }
 

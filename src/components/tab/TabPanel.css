@@ -1,0 +1,22 @@
+@import '../../styles/variables.css';
+
+.root {
+  position: relative;
+}
+
+.header {
+  position: absolute;
+}
+
+.body {
+  position: absolute;
+  top: 24px;
+}
+
+.bodyShow {
+  display: block;
+}
+
+.bodyHide {
+  display: none;
+}

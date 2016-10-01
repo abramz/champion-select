@@ -11,7 +11,7 @@
   /* background */
   --backround-dark: #343434;
   --background-light: #fbfbfb;
-  --background-header: #000;
+  --background-header: #343434;
 
   /* breakpoints */
   --screen-xs-min: 480px;

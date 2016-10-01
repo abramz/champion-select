@@ -1,0 +1,80 @@
+@import '../../styles/variables.css';
+
+.root {
+  margin-bottom: 4px;
+}
+
+.header{
+  padding: 4px 8px;
+  background-color: var(--backround-dark);
+  box-shadow: 0 2px 2px 0 rgba(50, 50, 50, 0.75);
+}
+
+
+.headerLink,
+.headerLink:hover,
+.headerLink:active,
+.headerLink:visited {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-white);
+}
+
+.headerArrow {
+  float: right;
+  width: 16px;
+  height: 16px;
+  margin-top: 4px;
+  background: url('./arrow.png') no-repeat center;
+  background-size: cover;
+}
+
+.headerArrowCollapse {
+  transform: rotate(270deg);
+}
+
+.headerArrowShow {
+  transform: rotate(0deg);
+}
+
+.body{
+  box-shadow: inset 0 0 10px #ccc;
+  padding: 4px 8px;
+}
+
+.bodyCollapse {
+  display: none;
+}
+
+.bodyShow {
+  display: block;
+}
+
+@media (--xs-viewport) {
+  .headerArrow {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+@media (--sm-viewport) {
+  .headerArrow {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (--md-viewport) {
+  .headerArrow {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (--lg-viewport) {
+  .headerArrow {
+    width: 18px;
+    height: 18px;
+  }
+}
