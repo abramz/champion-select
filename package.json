@@ -38,7 +38,9 @@
     "start": "babel-node tools/run start",
     "snyk:wizard": "snyk wizard",
     "snyk:protect": "snyk protect",
-    "snyk:test": "snyk test"
+    "snyk:test": "snyk test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "nyc": {
     "include": [
@@ -84,7 +86,7 @@
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0",
-    "snyk": "^1.19.1",
+    "snyk": "^1.25.0",
     "source-map-support": "^0.4.2",
     "universal-router": "^1.2.2",
     "validator": "^5.6.0",
@@ -167,5 +169,6 @@
     "webpack": "^1.13.2",
     "webpack-hot-middleware": "^2.12.2",
     "webpack-middleware": "^1.5.1"
-  }
+  },
+  "snyk": true
 }
